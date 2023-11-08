@@ -1,0 +1,25 @@
+CO_Node_Guarding.pbi: \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_Node_Guarding.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_HBconsumer.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_PDO.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_TIME.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_SYNC.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_NMT_Heartbeat.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_Emergency.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\inc\CO_SDO.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\device\CO_OD.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\device\CO_types.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdbool.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\device\CO_driver_target.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\device\CO_driver.h \
+  E:\AnyID\HFReader\srt\CanOpen\CanOpen\..\CANopenNode-1.3\device\CANopen.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
+  E:\AnyID\HFReader\srt\CanOpen\CANopenNode-1.3\src\CO_Node_Guarding.c

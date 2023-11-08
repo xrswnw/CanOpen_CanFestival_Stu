@@ -1,0 +1,696 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  08/Nov/2023  18:34:28
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Exe\CanOpen.out
+#    Map file     =
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\List\CanOpen.map
+#    Command line =
+#        -f C:\Users\Administrator\AppData\Local\Temp\EWE472.tmp
+#        (E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_Can_HL.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_Device.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_FRam.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_FRam_HL.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_RTC.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_SysCfg.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_SysTick_HL.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_Tim_HL.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_WDG_HL.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_FRam.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_Stdlib.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_Uart_Receive.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\dcf.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\demo.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\emcy.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\lifegrd.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\lss.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\main.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\misc.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\nmtMaster.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\nmtSlave.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\objacces.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\pdo.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\sdo.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\startup_stm32f10x_hd.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\states.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_adc.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_bkp.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_can.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_dma.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_exti.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_flash.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_gpio.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_it.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_iwdg.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_pwr.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_rcc.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_rtc.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_spi.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_tim.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\stm32f10x_usart.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\sync.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\system_stm32f10x.o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\timer.o
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
+#        --no_out_extension -o
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Exe\CanOpen.out
+#        --map
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\List\CanOpen.map
+#        --config
+#        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\stm32f10x_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The advanced heap was selected because the application calls memory
+allocation functions outside of system library functions, and there
+are calls to deallocation functions in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x80f'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x130
+  .intvec            ro code   0x800'0000   0x130  startup_stm32f10x_hd.o [1]
+                             - 0x800'0130   0x130
+
+"P1":                                      0x3c20
+  .text              ro code   0x800'0130   0x77c  pdo.o [1]
+  .text              ro code   0x800'08ac    0x66  ABImemset.o [3]
+  .text              ro code   0x800'0912    0x3a  zero_init3.o [3]
+  .text              ro code   0x800'094c   0x1d6  objacces.o [1]
+  .rodata            const     0x800'0b22     0x2  demo.o [1]
+  .text              ro code   0x800'0b24    0xa6  ABImemcpy.o [3]
+  .rodata            const     0x800'0bca     0x1  demo.o [1]
+  .text              ro code   0x800'0bcc   0x1c8  AnyID_CanOpen_Can_HL.o [1]
+  .text              ro code   0x800'0d94    0x68  memcmp.o [3]
+  .text              ro code   0x800'0dfc   0x1e4  timer.o [1]
+  .text              ro code   0x800'0fe0   0x178  stm32f10x_gpio.o [1]
+  .text              ro code   0x800'1158   0x3cc  stm32f10x_can.o [1]
+  .text              ro code   0x800'1524    0xb8  misc.o [1]
+  .text              ro code   0x800'15dc    0xc4  AnyID_CanOpen_Tim_HL.o [1]
+  .text              ro code   0x800'16a0   0x112  stm32f10x_tim.o [1]
+  .text              ro code   0x800'17b4   0x57c  dlmalloc.o [2]
+  .text              ro code   0x800'1d30     0x6  abort.o [2]
+  .text              ro code   0x800'1d38    0x14  exit.o [4]
+  .text              ro code   0x800'1d4c   0x450  sdo.o [1]
+  .text              ro code   0x800'219c     0x4  heaptramp0.o [2]
+  .text              ro code   0x800'21a0   0x436  states.o [1]
+  .text              ro code   0x800'25d8   0x132  sync.o [1]
+  .text              ro code   0x800'270c   0x2f4  lifegrd.o [1]
+  .text              ro code   0x800'2a00    0x5c  emcy.o [1]
+  .text              ro code   0x800'2a5c    0x30  nmtSlave.o [1]
+  .text              ro code   0x800'2a8c    0x5c  nmtMaster.o [1]
+  .text              ro code   0x800'2ae8   0x2f0  stm32f10x_rcc.o [1]
+  .text              ro code   0x800'2dd8   0x236  AnyID_FRam.o [1]
+  .text              ro code   0x800'3010   0x228  AnyID_CanOpen_FRam_HL.o [1]
+  .text              ro code   0x800'3238   0x170  AnyID_CanOpen_SysCfg.o [1]
+  .text              ro code   0x800'33a8    0x2c  stm32f10x_flash.o [1]
+  .text              ro code   0x800'33d4    0xe8  AnyID_CanOpen_Device.o [1]
+  .text              ro code   0x800'34bc    0xa4  AnyID_CanOpen_SysTick_HL.o [1]
+  .text              ro code   0x800'3560    0x48  AnyID_Stdlib.o [1]
+  .text              ro code   0x800'35a8   0x13c  AnyID_CanOpen_FRam.o [1]
+  .text              ro code   0x800'36e4   0x110  system_stm32f10x.o [1]
+  .text              ro code   0x800'37f4    0x94  stm32f10x_rtc.o [1]
+  .text              ro code   0x800'3888    0x78  lz77_init_single.o [3]
+  .text              ro code   0x800'3900    0x6e  stm32f10x_it.o [1]
+  .text              ro code   0x800'3970    0x62  demo.o [1]
+  .rodata            const     0x800'39d4    0x28  demo.o [1]
+  .text              ro code   0x800'39fc    0x28  data_init.o [3]
+  .iar.init_table    const     0x800'3a24    0x20  - Linker created -
+  .text              ro code   0x800'3a44    0x1e  cmain.o [3]
+  .text              ro code   0x800'3a62     0x4  low_level_init.o [2]
+  .text              ro code   0x800'3a66     0xc  main.o [1]
+  .text              ro code   0x800'3a72     0x4  exit.o [2]
+  .text              ro code   0x800'3a78     0xa  cexit.o [3]
+  .rodata            const     0x800'3a84    0x14  AnyID_CanOpen_SysCfg.o [1]
+  .rodata            const     0x800'3a98    0x10  states.o [1]
+  .rodata            const     0x800'3aa8    0x10  states.o [1]
+  .text              ro code   0x800'3ab8    0x10  startup_stm32f10x_hd.o [1]
+  .rodata            const     0x800'3ac8     0xc  demo.o [1]
+  .rodata            const     0x800'3ad4     0xc  demo.o [1]
+  .text              ro code   0x800'3ae0     0xc  cstartup_M.o [3]
+  .rodata            const     0x800'3aec     0x8  AnyID_CanOpen_Can_HL.o [1]
+  .rodata            const     0x800'3af4     0x8  AnyID_CanOpen_Can_HL.o [1]
+  .rodata            const     0x800'3afc     0x8  AnyID_CanOpen_FRam_HL.o [1]
+  .rodata            const     0x800'3b04     0x8  AnyID_CanOpen_FRam_HL.o [1]
+  .rodata            const     0x800'3b0c     0x8  AnyID_CanOpen_SysCfg.o [1]
+  .rodata            const     0x800'3b14     0x8  states.o [1]
+  .rodata            const     0x800'3b1c     0x8  states.o [1]
+  .rodata            const     0x800'3b24     0x8  states.o [1]
+  .rodata            const     0x800'3b2c     0x8  states.o [1]
+  .text              ro code   0x800'3b34     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b38     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b3c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b40     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b44     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b48     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b4c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b50     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b54     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b58     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b5c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b60     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b64     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b68     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b6c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b70     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b74     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b78     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b7c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b80     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b84     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b88     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b8c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b90     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b94     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b98     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3b9c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3ba0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3ba4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3ba8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bac     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bb0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bb4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bb8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bbc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bc0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bc4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bc8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bcc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bd0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bd4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bd8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bdc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3be0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3be4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3be8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bec     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bf0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bf4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bf8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3bfc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c00     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c04     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c08     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c0c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c10     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3c14     0x4  startup_stm32f10x_hd.o [1]
+  .rodata            const     0x800'3c18     0x0  zero_init3.o [3]
+  .rodata            const     0x800'3c18     0x0  lz77_init_single.o [3]
+  Initializer bytes  const     0x800'3c18   0x138  <for P2-1>
+                             - 0x800'3d50  0x3c20
+
+"P2", part 1 of 3:                          0x3cf
+  P2-1                        0x2000'0000   0x3cf  <Init block>
+    .data            inited   0x2000'0000     0xc  AnyID_CanOpen_RTC.o [1]
+    .data            inited   0x2000'000c     0x4  AnyID_CanOpen_SysCfg.o [1]
+    .data            inited   0x2000'0010     0x4  demo.o [1]
+    .data            inited   0x2000'0014     0x4  demo.o [1]
+    .data            inited   0x2000'0018    0x30  demo.o [1]
+    .data            inited   0x2000'0048     0x4  demo.o [1]
+    .data            inited   0x2000'004c    0x48  demo.o [1]
+    .data            inited   0x2000'0094     0x8  demo.o [1]
+    .data            inited   0x2000'009c    0x24  demo.o [1]
+    .data            inited   0x2000'00c0    0x24  demo.o [1]
+    .data            inited   0x2000'00e4     0x4  demo.o [1]
+    .data            inited   0x2000'00e8    0x14  demo.o [1]
+    .data            inited   0x2000'00fc   0x2a8  demo.o [1]
+    .data            inited   0x2000'03a4    0x10  stm32f10x_rcc.o [1]
+    .data            inited   0x2000'03b4     0x4  stm32f10x_rcc.o [1]
+    .data            inited   0x2000'03b8     0x4  timer.o [1]
+    .data            inited   0x2000'03bc     0x2  demo.o [1]
+    .data            inited   0x2000'03be     0x2  demo.o [1]
+    .data            inited   0x2000'03c0     0x2  demo.o [1]
+    .data            inited   0x2000'03c2     0x2  demo.o [1]
+    .data            inited   0x2000'03c4     0x2  timer.o [1]
+    .data            inited   0x2000'03c6     0x1  demo.o [1]
+    .data            inited   0x2000'03c7     0x1  demo.o [1]
+    .data            inited   0x2000'03c8     0x1  demo.o [1]
+    .data            inited   0x2000'03c9     0x1  demo.o [1]
+    .data            inited   0x2000'03ca     0x1  demo.o [1]
+    .data            inited   0x2000'03cb     0x1  demo.o [1]
+    .data            inited   0x2000'03cc     0x1  demo.o [1]
+    .data            inited   0x2000'03cd     0x1  demo.o [1]
+    .data            inited   0x2000'03ce     0x1  demo.o [1]
+                            - 0x2000'03cf   0x3cf
+
+"P2", part 2 of 3:                          0x364
+  .bss               zero     0x2000'03d0   0x1d8  dlmalloc.o [2]
+  .bss               zero     0x2000'05a8    0xc0  timer.o [1]
+  .bss               zero     0x2000'0668    0x38  AnyID_CanOpen_FRam.o [1]
+  .bss               zero     0x2000'06a0    0x20  demo.o [1]
+  .bss               zero     0x2000'06c0    0x18  demo.o [1]
+  .bss               zero     0x2000'06d8    0x18  dlmalloc.o [2]
+  .bss               zero     0x2000'06f0    0x14  AnyID_CanOpen_SysCfg.o [1]
+  .bss               zero     0x2000'0704    0x10  AnyID_CanOpen_Device.o [1]
+  .bss               zero     0x2000'0714     0x4  AnyID_CanOpen_SysTick_HL.o [1]
+  .bss               zero     0x2000'0718     0x4  AnyID_CanOpen_SysTick_HL.o [1]
+  .bss               zero     0x2000'071c     0x4  AnyID_CanOpen_Tim_HL.o [1]
+  .bss               zero     0x2000'0720     0x4  demo.o [1]
+  .bss               zero     0x2000'0724     0x4  demo.o [1]
+  .bss               zero     0x2000'0728     0x4  demo.o [1]
+  .bss               zero     0x2000'072c     0x2  demo.o [1]
+  .bss               zero     0x2000'072e     0x2  demo.o [1]
+  .bss               zero     0x2000'0730     0x1  demo.o [1]
+  .bss               zero     0x2000'0731     0x1  demo.o [1]
+  .bss               zero     0x2000'0732     0x1  demo.o [1]
+  .bss               zero     0x2000'0733     0x1  demo.o [1]
+                            - 0x2000'0734   0x364
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'0738   0x400  <Block>
+    CSTACK           uninit   0x2000'0738   0x400  <Block tail>
+                            - 0x2000'0b38   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'3d50   0x80f'ffff  0xf'c2b0
+  0x2000'03cf  0x2000'03cf       0x1
+  0x2000'0734  0x2000'0737       0x4
+  0x2000'0b38  0x2001'7fff  0x1'74c8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x364:
+          0x2000'03d0  0x364
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x138 (32% of destination):
+           0x800'3c18  0x138
+    1 destination range, total size 0x3cf:
+          0x2000'0000  0x3cf
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                      ro code  ro data  rw data
+    ------                      -------  -------  -------
+command line/config:
+    -----------------------------------------------------
+    Total:
+
+E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj: [1]
+    AnyID_CanOpen_Can_HL.o          456       16
+    AnyID_CanOpen_Device.o          232                16
+    AnyID_CanOpen_FRam.o            316                56
+    AnyID_CanOpen_FRam_HL.o         552       16
+    AnyID_CanOpen_RTC.o                        3       12
+    AnyID_CanOpen_SysCfg.o          368       30       24
+    AnyID_CanOpen_SysTick_HL.o      164                 8
+    AnyID_CanOpen_Tim_HL.o          196                 4
+    AnyID_FRam.o                    566
+    AnyID_Stdlib.o                   72
+    demo.o                           98      366    1'009
+    emcy.o                           92
+    lifegrd.o                       756
+    main.o                           12
+    misc.o                          184
+    nmtMaster.o                      92
+    nmtSlave.o                       48
+    objacces.o                      470
+    pdo.o                         1'916
+    sdo.o                         1'104
+    startup_stm32f10x_hd.o          548
+    states.o                      1'078       64
+    stm32f10x_can.o                 972
+    stm32f10x_flash.o                44
+    stm32f10x_gpio.o                376
+    stm32f10x_it.o                  110
+    stm32f10x_rcc.o                 752        6       20
+    stm32f10x_rtc.o                 148
+    stm32f10x_tim.o                 274
+    sync.o                          306
+    system_stm32f10x.o              272
+    timer.o                         484        2      198
+    -----------------------------------------------------
+    Total:                       13'058      503    1'347
+
+dl7M_tlf.a: [2]
+    abort.o                           6
+    dlmalloc.o                    1'404               496
+    exit.o                            4
+    heaptramp0.o                      4
+    low_level_init.o                  4
+    -----------------------------------------------------
+    Total:                        1'422               496
+
+rt7M_tl.a: [3]
+    ABImemcpy.o                     166
+    ABImemset.o                     102
+    cexit.o                          10
+    cmain.o                          30
+    cstartup_M.o                     12
+    data_init.o                      40
+    lz77_init_single.o              120
+    memcmp.o                        104
+    zero_init3.o                     58
+    -----------------------------------------------------
+    Total:                          642
+
+shb_l.a: [4]
+    exit.o                           20
+    -----------------------------------------------------
+    Total:                           20
+
+    Gaps                             15        4
+    Linker created                            32    1'024
+---------------------------------------------------------
+    Grand Total:                 15'157      539    2'867
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'3a24          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'3a44          --   Gb  - Linker created -
+?main                    0x800'3a45         Code  Gb  cmain.o [3]
+ADCPrescTable           0x2000'03b4    0x4  Data  Lc  stm32f10x_rcc.o [1]
+APBAHBPrescTable        0x2000'03a4   0x10  Data  Lc  stm32f10x_rcc.o [1]
+BusFault_Handler         0x800'3907    0x2  Code  Gb  stm32f10x_it.o [1]
+CAN_FilterInit           0x800'126b   0xc6  Code  Gb  stm32f10x_can.o [1]
+CAN_Init                 0x800'1159  0x112  Code  Gb  stm32f10x_can.o [1]
+CAN_RX_PORT              0x800'3aec    0x8  Data  Gb  AnyID_CanOpen_Can_HL.o [1]
+CAN_TX_PORT              0x800'3af4    0x8  Data  Gb  AnyID_CanOpen_Can_HL.o [1]
+CAN_Transmit             0x800'1349  0x13e  Code  Gb  stm32f10x_can.o [1]
+CAN_TransmitStatus       0x800'1487   0x9e  Code  Gb  stm32f10x_can.o [1]
+CSTACK$$Base            0x2000'0738          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0b38          --   Gb  - Linker created -
+Can_InitInterface        0x800'0bcd  0x124  Code  Gb  AnyID_CanOpen_Can_HL.o [1]
+ConsumerHeartbeatAlarm   0x800'270d   0x36  Code  Gb  lifegrd.o [1]
+ControlWordAxis1        0x2000'03cc    0x1  Data  Gb  demo.o [1]
+ControlWordAxis2        0x2000'03be    0x2  Data  Gb  demo.o [1]
+CopyBits                 0x800'023d   0xd8  Code  Gb  pdo.o [1]
+DebugMon_Handler         0x800'390d    0x2  Code  Gb  stm32f10x_it.o [1]
+DelAlarm                 0x800'0eb3   0x38  Code  Gb  timer.o [1]
+Device_CanPeriphInit     0x800'349f   0x16  Code  Gb  AnyID_CanOpen_Device.o [1]
+Device_ReadDeviceParamenter
+                         0x800'33d5   0x98  Code  Gb  AnyID_CanOpen_Device.o [1]
+Device_WriteDeviceParamenter
+                         0x800'346d   0x32  Code  Gb  AnyID_CanOpen_Device.o [1]
+FLASH_PrefetchBufferCmd
+                         0x800'33bb   0x14  Code  Gb  stm32f10x_flash.o [1]
+FLASH_SetLatency         0x800'33a9   0x12  Code  Gb  stm32f10x_flash.o [1]
+FRAM_SCL_PORT            0x800'3b04    0x8  Data  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRAM_SDA_PORT            0x800'3afc    0x8  Data  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_Delayms             0x800'305b   0x12  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CAck              0x800'30f5   0x30  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CDelay            0x800'304d    0xe  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CNoAck            0x800'3125   0x30  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CReceiveByte      0x800'31e1   0x4e  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CSendByte         0x800'3197   0x4a  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CStart            0x800'306d   0x58  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CStop             0x800'30c5   0x30  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_I2CWaitAck          0x800'3155   0x42  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_InitInterface       0x800'3011   0x3c  Code  Gb  AnyID_CanOpen_FRam_HL.o [1]
+FRam_ReadBuffer          0x800'2dd9   0xe2  Code  Gb  AnyID_FRam.o [1]
+FRam_WriteBuffer         0x800'2f67   0xa8  Code  Gb  AnyID_FRam.o [1]
+FRam_WritePage           0x800'2ebb   0xac  Code  Gb  AnyID_FRam.o [1]
+Fram_ReadBootParamenter
+                         0x800'35a9   0xfa  Code  Gb  AnyID_CanOpen_FRam.o [1]
+Fram_WriteBootParamenter
+                         0x800'36a3   0x3e  Code  Gb  AnyID_CanOpen_FRam.o [1]
+GPIO_Init                0x800'0fe1   0xea  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_PinRemapConfig      0x800'10cb   0x84  Code  Gb  stm32f10x_gpio.o [1]
+GuardTimeAlarm           0x800'278d   0x94  Code  Gb  lifegrd.o [1]
+HardFault_Handler        0x800'3903    0x2  Code  Gb  stm32f10x_it.o [1]
+MemManage_Handler        0x800'3905    0x2  Code  Gb  stm32f10x_it.o [1]
+NMI_Handler              0x800'3901    0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Init                0x800'152f   0x66  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                         0x800'1525    0xa  Code  Gb  misc.o [1]
+NVIC_SetVectorTable      0x800'1595    0xc  Code  Gb  misc.o [1]
+ObjDict_Data            0x2000'00fc  0x2a8  Data  Gb  demo.o [1]
+ObjDict_Index1200       0x2000'0018   0x30  Data  Gb  demo.o [1]
+ObjDict_Index1800       0x2000'004c   0x48  Data  Gb  demo.o [1]
+ObjDict_Index1800_callbacks
+                        0x2000'06c0   0x18  Data  Gb  demo.o [1]
+ObjDict_Index1A00       0x2000'009c   0x24  Data  Gb  demo.o [1]
+ObjDict_Index2000       0x2000'00c0   0x24  Data  Gb  demo.o [1]
+ObjDict_ObjdictSize      0x800'0b22    0x2  Data  Gb  demo.o [1]
+ObjDict_PDO_status      0x2000'00e8   0x14  Data  Gb  demo.o [1]
+ObjDict_bDeviceNodeId   0x2000'03cd    0x1  Data  Gb  demo.o [1]
+ObjDict_firstIndex       0x800'3ac8    0xc  Data  Gb  demo.o [1]
+ObjDict_heartBeatTimers
+                        0x2000'072e    0x2  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj1003
+                        0x2000'0732    0x1  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj1016
+                        0x2000'0731    0x1  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj1200
+                        0x2000'03c6    0x1  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj1800
+                        0x2000'03c8    0x1  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj1A00
+                        0x2000'03ca    0x1  Data  Gb  demo.o [1]
+ObjDict_highestSubIndex_obj2000
+                        0x2000'03cb    0x1  Data  Gb  demo.o [1]
+ObjDict_iam_a_slave      0x800'0bca    0x1  Data  Gb  demo.o [1]
+ObjDict_lastIndex        0x800'3ad4    0xc  Data  Gb  demo.o [1]
+ObjDict_obj1001         0x2000'0733    0x1  Data  Gb  demo.o [1]
+ObjDict_obj1003         0x2000'06a0   0x20  Data  Gb  demo.o [1]
+ObjDict_obj1005         0x2000'0724    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1006         0x2000'0728    0x4  Data  Gb  demo.o [1]
+ObjDict_obj100C         0x2000'03c2    0x2  Data  Gb  demo.o [1]
+ObjDict_obj100D         0x2000'03ce    0x1  Data  Gb  demo.o [1]
+ObjDict_obj1014         0x2000'00e4    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1016         0x2000'0720    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1017         0x2000'03c0    0x2  Data  Gb  demo.o [1]
+ObjDict_obj1200_COB_ID_Client_to_Server_Transmit_SDO
+                        0x2000'0010    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1200_COB_ID_Server_to_Client_Receive_SDO
+                        0x2000'0014    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1200_Node_ID_of_the_SDO_Server
+                        0x2000'03c7    0x1  Data  Gb  demo.o [1]
+ObjDict_obj1800_COB_ID_used_by_PDO
+                        0x2000'0048    0x4  Data  Gb  demo.o [1]
+ObjDict_obj1800_Compatibility_Entry
+                        0x2000'0730    0x1  Data  Gb  demo.o [1]
+ObjDict_obj1800_Event_Timer
+                        0x2000'072c    0x2  Data  Gb  demo.o [1]
+ObjDict_obj1800_Inhibit_Time
+                        0x2000'03bc    0x2  Data  Gb  demo.o [1]
+ObjDict_obj1800_Transmission_Type
+                        0x2000'03c9    0x1  Data  Gb  demo.o [1]
+ObjDict_obj1A00         0x2000'0094    0x8  Data  Gb  demo.o [1]
+ObjDict_objdict          0x800'39d4   0x28  Data  Gb  demo.o [1]
+ObjDict_scanIndexOD      0x800'3971   0x50  Code  Gb  demo.o [1]
+ObjDict_valueRangeTest   0x800'39cd    0x6  Code  Gb  demo.o [1]
+OnCOB_ID_SyncUpdate      0x800'25e7   0x12  Code  Gb  sync.o [1]
+OnHeartbeatProducerUpdate
+                         0x800'2839   0x18  Code  Gb  lifegrd.o [1]
+OnNodeGuardUpdate        0x800'2821   0x18  Code  Gb  lifegrd.o [1]
+OnNumberOfErrorsUpdate   0x800'2a01   0x36  Code  Gb  emcy.o [1]
+PDOEventTimerAlarm       0x800'04b1   0x2e  Code  Gb  pdo.o [1]
+PDOInhibitTimerAlarm     0x800'04e1   0x36  Code  Gb  pdo.o [1]
+PDOInit                  0x800'07b9   0x5c  Code  Gb  pdo.o [1]
+PDOStop                  0x800'0819   0x94  Code  Gb  pdo.o [1]
+PendSV_Handler           0x800'390f    0x2  Code  Gb  stm32f10x_it.o [1]
+ProducerHeartbeatAlarm   0x800'2743   0x4a  Code  Gb  lifegrd.o [1]
+RCC_ADCCLKConfig         0x800'2c15   0x10  Code  Gb  stm32f10x_rcc.o [1]
+RCC_AHBPeriphClockCmd    0x800'2cfd   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphClockCmd   0x800'2d35   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'2d19   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_DeInit               0x800'2ae9   0x40  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetClocksFreq        0x800'2c25   0xd8  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetFlagStatus        0x800'2d51   0x46  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetSYSCLKSource      0x800'2bd3    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HCLKConfig           0x800'2bdd   0x10  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HSEConfig            0x800'2b29   0x3a  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK1Config          0x800'2bed   0x10  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK2Config          0x800'2bfd   0x12  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLCmd               0x800'2bb9    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLConfig            0x800'2ba1   0x18  Code  Gb  stm32f10x_rcc.o [1]
+RCC_SYSCLKConfig         0x800'2bc3   0x10  Code  Gb  stm32f10x_rcc.o [1]
+RCC_USBCLKConfig         0x800'2c0f    0x6  Code  Gb  stm32f10x_rcc.o [1]
+RCC_WaitForHSEStartUp    0x800'2b63   0x3e  Code  Gb  stm32f10x_rcc.o [1]
+RTC_ClearFlag            0x800'3847    0xa  Code  Gb  stm32f10x_rtc.o [1]
+RTC_EnterConfigMode      0x800'37f5    0xc  Code  Gb  stm32f10x_rtc.o [1]
+RTC_ExitConfigMode       0x800'3801    0xe  Code  Gb  stm32f10x_rtc.o [1]
+RTC_GetITStatus          0x800'3851   0x26  Code  Gb  stm32f10x_rtc.o [1]
+RTC_IRQHandler           0x800'3935   0x2a  Code  Gb  stm32f10x_it.o [1]
+RTC_SetCounter           0x800'380f   0x1a  Code  Gb  stm32f10x_rtc.o [1]
+RTC_WaitForLastTask      0x800'3829    0xa  Code  Gb  stm32f10x_rtc.o [1]
+RTC_WaitForSynchro       0x800'3833   0x14  Code  Gb  stm32f10x_rtc.o [1]
+Region$$Table$$Base      0x800'3a24          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'3a44          --   Gb  - Linker created -
+RegisterSetODentryCallBack
+                         0x800'0ae3   0x3e  Code  Gb  objacces.o [1]
+SDOTimeoutAlarm          0x800'1d4d   0xde  Code  Gb  sdo.o [1]
+STick_InitSysTick        0x800'3519   0x26  Code  Gb  AnyID_CanOpen_SysTick_HL.o [1]
+SVC_Handler              0x800'390b    0x2  Code  Gb  stm32f10x_it.o [1]
+SYS_RUN_LED              0x800'3b0c    0x8  Data  Gb  AnyID_CanOpen_SysCfg.o [1]
+SetAlarm                 0x800'0dfd   0xb6  Code  Gb  timer.o [1]
+SetSysClock              0x800'3721    0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72          0x800'3729   0xb0  Code  Lc  system_stm32f10x.o [1]
+SyncAlarm                0x800'25d9    0xe  Code  Gb  sync.o [1]
+SysTick_CLKSourceConfig
+                         0x800'15a1   0x1c  Code  Gb  misc.o [1]
+SysTick_Config           0x800'34e9   0x30  Code  Lc  AnyID_CanOpen_SysTick_HL.o [1]
+SysTick_Handler          0x800'3911   0x24  Code  Gb  stm32f10x_it.o [1]
+Sys_CfgClock             0x800'324b   0x76  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_CfgNVIC              0x800'32e9   0x16  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_CfgPeriphClk         0x800'32c1   0x28  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_CtrlIOInit           0x800'32ff   0x34  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_Delayms              0x800'3239   0x12  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_Init                 0x800'3333   0x3e  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+Sys_LedTask              0x800'3371   0x20  Code  Gb  AnyID_CanOpen_SysCfg.o [1]
+SystemInit               0x800'36e5   0x3c  Code  Gb  system_stm32f10x.o [1]
+TIM1_UP_IRQHandler       0x800'1667   0x28  Code  Gb  AnyID_CanOpen_Tim_HL.o [1]
+TIM_ClearITPendingBit    0x800'17a9    0xa  Code  Gb  stm32f10x_tim.o [1]
+TIM_Cmd                  0x800'1745   0x1e  Code  Gb  stm32f10x_tim.o [1]
+TIM_GetITStatus          0x800'177b   0x2e  Code  Gb  stm32f10x_tim.o [1]
+TIM_ITConfig             0x800'1763   0x18  Code  Gb  stm32f10x_tim.o [1]
+TIM_TimeBaseInit         0x800'16a1   0x7c  Code  Gb  stm32f10x_tim.o [1]
+TPDO_Communication_Parameter_Callback
+                         0x800'071b   0x9e  Code  Gb  pdo.o [1]
+Tim_InitInterface        0x800'15dd   0x6a  Code  Gb  AnyID_CanOpen_Tim_HL.o [1]
+TimeDispatch             0x800'0eeb   0xea  Code  Gb  timer.o [1]
+USB_LP_CAN1_RX0_IRQHandler
+                         0x800'396d    0x2  Code  Gb  stm32f10x_it.o [1]
+UsageFault_Handler       0x800'3909    0x2  Code  Gb  stm32f10x_it.o [1]
+_RxPDO_EventTimers_Handler
+                         0x800'0517    0x2  Code  Gb  pdo.o [1]
+__NVIC_SetPriority       0x800'34bd   0x2c  Code  Lc  AnyID_CanOpen_SysTick_HL.o [1]
+__aeabi_memcpy           0x800'0b25         Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy4          0x800'0b45         Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy8          0x800'0b45         Code  Gb  ABImemcpy.o [3]
+__aeabi_memset           0x800'08ad         Code  Gb  ABImemset.o [3]
+__cmain                  0x800'3a45         Code  Gb  cmain.o [3]
+__exit                   0x800'1d39   0x14  Code  Gb  exit.o [4]
+__iar_Memset             0x800'08ad         Code  Gb  ABImemset.o [3]
+__iar_Memset_word        0x800'08b5         Code  Gb  ABImemset.o [3]
+__iar_data_init3         0x800'39fd   0x28  Code  Gb  data_init.o [3]
+__iar_dlfree             0x800'1809  0x51e  Code  Gb  dlmalloc.o [2]
+__iar_lz77_init_single3
+                         0x800'3889   0x78  Code  Gb  lz77_init_single.o [3]
+__iar_program_start      0x800'3ae1         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'0913   0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'3a63    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f10x_hd.o [1]
+_call_main               0x800'3a51         Code  Gb  cmain.o [3]
+_exit                    0x800'3a79         Code  Gb  cexit.o [3]
+_getODentry              0x800'0957  0x166  Code  Gb  objacces.o [1]
+_gm_                    0x2000'03d0  0x1d8  Data  Lc  dlmalloc.o [2]
+_heartbeatError          0x800'29f9    0x2  Code  Gb  lifegrd.o [1]
+_initialisation          0x800'25b9    0x2  Code  Gb  states.o [1]
+_main                    0x800'3a5f         Code  Gb  cmain.o [3]
+_nodeguardError          0x800'29ff    0x2  Code  Gb  lifegrd.o [1]
+_operational             0x800'25d3    0x2  Code  Gb  states.o [1]
+_post_SlaveBootup        0x800'29fb    0x2  Code  Gb  lifegrd.o [1]
+_post_SlaveStateChange   0x800'29fd    0x2  Code  Gb  lifegrd.o [1]
+_post_TPDO               0x800'2709    0x2  Code  Gb  sync.o [1]
+_post_emcy               0x800'2a5b    0x2  Code  Gb  emcy.o [1]
+_post_sync               0x800'2707    0x2  Code  Gb  sync.o [1]
+_preOperational          0x800'25bb   0x18  Code  Gb  states.o [1]
+_sendPDOevent            0x800'0519  0x202  Code  Gb  pdo.o [1]
+_stopped                 0x800'25d5    0x2  Code  Gb  states.o [1]
+_storeODSubIndex         0x800'0b21    0x2  Code  Gb  objacces.o [1]
+a_GetCrc                 0x800'3561   0x48  Code  Gb  AnyID_Stdlib.o [1]
+abort                    0x800'1d31    0x6  Code  Gb  abort.o [2]
+accessDictionaryError    0x800'094d    0xa  Code  Gb  objacces.o [1]
+buildPDO                 0x800'0131  0x10c  Code  Gb  pdo.o [1]
+canSend                  0x800'0cf1   0x96  Code  Gb  AnyID_CanOpen_Can_HL.o [1]
+emergencyInit            0x800'2a37   0x1c  Code  Gb  emcy.o [1]
+emergencyStop            0x800'2a59    0x2  Code  Gb  emcy.o [1]
+exit                     0x800'3a73    0x4  Code  Gb  exit.o [2]
+free                     0x800'219d    0x4  Code  Gb  heaptramp0.o [2]
+g_nSysDelay             0x2000'0718    0x4  Data  Gb  AnyID_CanOpen_SysTick_HL.o [1]
+g_nSysState             0x2000'000c    0x4  Data  Gb  AnyID_CanOpen_SysCfg.o [1]
+g_nSysTick              0x2000'0714    0x4  Data  Gb  AnyID_CanOpen_SysTick_HL.o [1]
+g_sDeviceParams         0x2000'0704   0x10  Data  Gb  AnyID_CanOpen_Device.o [1]
+g_sFramBootParamenter   0x2000'0668   0x38  Data  Gb  AnyID_CanOpen_FRam.o [1]
+g_sRtcTime              0x2000'0000    0xc  Data  Gb  AnyID_CanOpen_RTC.o [1]
+g_sSysclockFrep         0x2000'06f0   0x14  Data  Gb  AnyID_CanOpen_SysCfg.o [1]
+getElapsedTime           0x800'1659    0xe  Code  Gb  AnyID_CanOpen_Tim_HL.o [1]
+heartbeatInit            0x800'2851   0x8a  Code  Gb  lifegrd.o [1]
+heartbeatStop            0x800'2981   0x42  Code  Gb  lifegrd.o [1]
+initSDOline              0x800'1ea3  0x1ae  Code  Gb  sdo.o [1]
+init_mparams             0x800'17cf   0x2c  Code  Lc  dlmalloc.o [2]
+last_time_set           0x2000'071c    0x4  Data  Lc  AnyID_CanOpen_Tim_HL.o [1]
+last_timer_raw          0x2000'03c4    0x2  Data  Gb  timer.o [1]
+lifeGuardInit            0x800'29d5   0x12  Code  Gb  lifegrd.o [1]
+lifeGuardStop            0x800'29e7   0x12  Code  Gb  lifegrd.o [1]
+main                     0x800'3a67    0xc  Code  Gb  main.o [1]
+masterSendNMTnodeguard   0x800'2abd   0x2c  Code  Gb  nmtMaster.o [1]
+masterSendNMTstateChange
+                         0x800'2a8d   0x30  Code  Gb  nmtMaster.o [1]
+memcmp                   0x800'0d95         Code  Gb  memcmp.o [3]
+mparams                 0x2000'06d8   0x18  Data  Lc  dlmalloc.o [2]
+nodeguardInit            0x800'28db   0x90  Code  Gb  lifegrd.o [1]
+nodeguardStop            0x800'29c3   0x12  Code  Gb  lifegrd.o [1]
+proceedSYNC              0x800'26d7   0x30  Code  Gb  sync.o [1]
+resetSDO                 0x800'1e2b   0x1e  Code  Gb  sdo.o [1]
+resetSDOline             0x800'1e49   0x5a  Code  Gb  sdo.o [1]
+scanIndexOD              0x800'0ac9   0x1a  Code  Gb  objacces.o [1]
+segment_holding          0x800'17b5   0x1a  Code  Lc  dlmalloc.o [2]
+sendOnePDOevent          0x800'033d  0x172  Code  Gb  pdo.o [1]
+sendPdo                  0x800'0315   0x28  Code  Lc  pdo.o [1]
+sendSDO                  0x800'205d   0xde  Code  Gb  sdo.o [1]
+sendSDOabort             0x800'213b   0x60  Code  Gb  sdo.o [1]
+sendSYNC                 0x800'26bf   0x18  Code  Gb  sync.o [1]
+sendSYNCMessage          0x800'2697   0x28  Code  Gb  sync.o [1]
+setNodeId                0x800'23d5  0x1cc  Code  Gb  states.o [1]
+setState                 0x800'22f9   0xdc  Code  Gb  states.o [1]
+setTimer                 0x800'1647   0x12  Code  Gb  AnyID_CanOpen_Tim_HL.o [1]
+slaveSendBootUp          0x800'2a5d   0x30  Code  Gb  nmtSlave.o [1]
+startSYNC                0x800'25f9   0x68  Code  Gb  sync.o [1]
+stopSYNC                 0x800'2669   0x2e  Code  Gb  sync.o [1]
+switchCommunicationState
+                         0x800'21a1  0x158  Code  Gb  states.o [1]
+timers                  0x2000'05a8   0xc0  Data  Gb  timer.o [1]
+total_sleep_time        0x2000'03b8    0x4  Data  Gb  timer.o [1]
+
+
+[1] = E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj
+[2] = dl7M_tlf.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  15'157 bytes of readonly  code memory
+     539 bytes of readonly  data memory
+   2'867 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

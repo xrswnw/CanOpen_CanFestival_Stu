@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\..\Boot\CanOpen\Boot.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\CanOpen.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
