@@ -42,11 +42,11 @@ void Device_ReadDeviceParamenter(void)                             		     //OK
             bBackup = FALSE;
         }
     }
-    if(1)//((b == FALSE && bBackup == FALSE))
+    if((b == FALSE && bBackup == FALSE))
     {
         memset(&g_sDeviceParams, 0, sizeof(DEVICE_PARAMS));
         
-		//bud = PLCK1 / (psc * (tbs1 + 1 + tbs2 + 1 + 1)) = 60/(10 *(4 + 1 + 5+ 1+ 1))  = 500K£¬Ä¬ÈÏ
+		//bud = PLCK1 / (psc * (tbs1 + 1 + tbs2 + 1 + 1)) = 60/(10 *(4 + 1 + 5+ 1+ 1)) 
 		g_sDeviceParams.canPara.mode = CAN_Mode_Normal;			
 		g_sDeviceParams.canPara.psc = 20;
 		g_sDeviceParams.canPara.tbs1 = CAN_BS1_5tq;
@@ -85,6 +85,6 @@ BOOL Device_WriteDeviceParamenter(void)
 
 void Device_CanPeriphInit()
 {
-	setNodeId(&ObjDict_Data, 10);
+	setNodeId(&ObjDict_Data, Periph_GetAddr());
 	setState(&ObjDict_Data, Initialisation);
 }

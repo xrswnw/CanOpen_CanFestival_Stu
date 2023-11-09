@@ -37,6 +37,6 @@ void Sys_CtrlIOInit(void);
 
 void Sys_Init(void);
 void Sys_LedTask(void);
-
+void Sys_PdoTask();
 
 #endif

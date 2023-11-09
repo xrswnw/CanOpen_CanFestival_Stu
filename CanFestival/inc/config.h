@@ -6,18 +6,18 @@
 /* New define, if SDO_MAX_LENGTH_TRANSFERT is exceeded allocate data buffer dynamically */
 #define SDO_DYNAMIC_BUFFER_ALLOCATION
 #define SDO_DYNAMIC_BUFFER_ALLOCATION_SIZE 	(1024)
-#define SDO_MAX_LENGTH_TRANSFER 						32
+#define SDO_MAX_LENGTH_TRANSFER				32
 #define SDO_MAX_SIMULTANEOUS_TRANSFERS 		5
-#define NMT_MAX_NODE_ID 	2
-#define SDO_TIMEOUT_MS 		3000U
-#define MAX_NB_TIMER 			8
+#define NMT_MAX_NODE_ID						2
+#define SDO_TIMEOUT_MS						3000U
+#define MAX_NB_TIMER						8
 
-#define SDO_BLOCK_SIZE  16    //≤‚ ‘ÃÌº”
+#define SDO_BLOCK_SIZE						16    //≤‚ ‘ÃÌº”
 
 // CANOPEN_BIG_ENDIAN is not defined
-#define CANOPEN_LITTLE_ENDIAN 1
+#define CANOPEN_LITTLE_ENDIAN				1
 
-#define US_TO_TIMEVAL_FACTOR 8
+#define US_TO_TIMEVAL_FACTOR				8
 
 
 #define REPEAT_SDO_MAX_SIMULTANEOUS_TRANSFERS_TIMES(repeat)\

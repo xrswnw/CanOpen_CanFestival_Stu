@@ -22,7 +22,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-
+#include "AnyID_CanOpen_Can_HL.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -170,8 +170,7 @@ void RTC_IRQHandler(void)
 
 void CAN_IRQHandler(void)
 {
-
-
+	Can_Receive_Msg();
 }
 
 

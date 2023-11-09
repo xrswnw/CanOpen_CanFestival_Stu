@@ -7,6 +7,8 @@
 const PORT_INF CAN_RX_PORT = {GPIOA, GPIO_Pin_11};
 const PORT_INF CAN_TX_PORT = {GPIOA, GPIO_Pin_12};
 
+
+CAN_FRAME g_sCanFrame = {0};
 BOOL Can_InitInterface(CAN_PARAMENTERINFO *pParamInfo)
 {
 	BOOL bOk = FALSE;
@@ -52,11 +54,13 @@ BOOL Can_InitInterface(CAN_PARAMENTERINFO *pParamInfo)
 		CAN_FilterInitStructure.CAN_FilterActivation = ENABLE;  				 // 激活过滤器0
 		CAN_FilterInit(&CAN_FilterInitStructure);  			 				// 过滤器初始化
 		
-		NVIC_InitStructure.NVIC_IRQChannel = USB_LP_CAN1_RX0_IRQn;
+		NVIC_InitStructure.NVIC_IRQChannel = CAN_INT_CHANNEL;
 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = INT_PRIORITY_UART_RX >> 2;
 		NVIC_InitStructure.NVIC_IRQChannelSubPriority = INT_PRIORITY_UART_RX & 0x03;
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 		NVIC_Init(&NVIC_InitStructure);
+		
+		CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
 		
 		bOk = FALSE;
 	}
@@ -68,61 +72,24 @@ BOOL Can_InitInterface(CAN_PARAMENTERINFO *pParamInfo)
 }
 
 
-
-u8 Med_Can_Send_Msg (u8* msg,u8 len)
-{	
-	u8 mailBox = 0, relust = 0;
-	u32 waitTimes = 0, index = 0;
-	
-	CanTxMsg TxMessage;   
-	TxMessage.StdId = 0x12;   			// 标准标识符
-	TxMessage.ExtId = 0x12;  		 	// 扩展标识符
-	TxMessage.IDE = CAN_ID_STD;   		// 使用标准标识符
-	TxMessage.RTR = 0;   				// 消息类型为数据帧，一帧8位
-	TxMessage.DLC = len;
-	
-	for(index = 0;index < len;index ++)
-	{
-		TxMessage.Data[index] = msg[index];   // 填充帧数据段
-	}
-	
-	mailBox = CAN_Transmit(CAN_PORT1, &TxMessage);   // 发送报文   
-
-	// 等待发送结束
-    while(CAN_TransmitStatus(CAN_PORT1, mailBox) != CANTXOK && waitTimes < CAN_SEND_TIMEOUT)
-    {
-        waitTimes++;
-		relust = CAN_TransmitStatus(CAN_PORT1, mailBox);
-    }
-    
-    if(waitTimes < CAN_SEND_TIMEOUT)
-    {
-       relust = CANTXOK;
-    }
-	
-	return relust;		
-}
-
-
 u8 canSend (CAN_PORT notused, Message *TxMessage)
 {	
 	u8 mailBox = 0, relust = 0;
-	u32 waitTimes = 0;
-	CanTxMsg txMasg = {0};
-   
-	txMasg.StdId = TxMessage->cob_id;   			// 标准标识符
-	txMasg.IDE = CAN_ID_STD;   						// 使用标准标识符
-	txMasg.RTR = (TxMessage->rtr == CAN_RTR_DATA ? 0 : 2);	
-	txMasg.DLC = TxMessage->len;
-	memcpy(txMasg.Data, TxMessage->data, TxMessage->len);
-	mailBox = CAN_Transmit(CAN_PORT1, &txMasg);   // 发送报文   
+
+	g_sCanFrame.waitTimes = 0;
+	g_sCanFrame.txMasg.StdId = TxMessage->cob_id;   			// 标准标识符
+	g_sCanFrame.txMasg.IDE = CAN_ID_STD;   						// 使用标准标识符
+	g_sCanFrame.txMasg.RTR = (TxMessage->rtr == CAN_RTR_DATA ? 0 : 2);	
+	g_sCanFrame.txMasg.DLC = TxMessage->len;
+	memcpy(g_sCanFrame.txMasg.Data, TxMessage->data, TxMessage->len);
+	mailBox = CAN_Transmit(CAN_PORT1, &g_sCanFrame.txMasg);   // 发送报文   
 	// 等待发送结束
-    while(CAN_TransmitStatus(CAN_PORT1, mailBox) != CANTXOK && waitTimes < CAN_SEND_TIMEOUT)
+    while(CAN_TransmitStatus(CAN_PORT1, mailBox) != CANTXOK && g_sCanFrame.waitTimes < CAN_SEND_TIMEOUT)
     {
-        waitTimes++;
+        g_sCanFrame.waitTimes++;
     }
     
-    if(waitTimes < CAN_SEND_TIMEOUT)
+    if(g_sCanFrame.waitTimes < CAN_SEND_TIMEOUT)
     {
        relust = CANTXOK;
     }
@@ -131,24 +98,19 @@ u8 canSend (CAN_PORT notused, Message *TxMessage)
 }
 
 
-u8 Med_Can_Receive_Msg (u8 *buf)
+void Can_Receive_Msg()
 {		   		   
- 	u32 i;
-	CanRxMsg RxMessage;   // 定义接收报文结构体
-	
+	Message rxMsg;
 	// 没有接收到数据,直接退出 
-	if( CAN_MessagePending(CAN_PORT1,CAN_FIFO0) == 0)
+	if(CAN_MessagePending(CAN_PORT1,CAN_FIFO0))
 	{
-		return 0;
-	}
-	CAN_Receive(CAN_PORT1, CAN_FIFO0, &RxMessage);   // 读取数据	
-	
-	for(i = 0;i < RxMessage.DLC;i ++)
-	{
-		buf[i] = RxMessage.Data[i];
-	}
-	
-	return RxMessage.DLC;	
+		CAN_Receive(CAN_PORT1, CAN_FIFO0, &g_sCanFrame.rxMasg);   // 读取数据	
+		rxMsg.cob_id = g_sCanFrame.rxMasg.StdId;
+		rxMsg.rtr = g_sCanFrame.rxMasg.RTR == (CAN_RTR_DATA ? 0 : 1);
+		rxMsg.len = g_sCanFrame.rxMasg.DLC;
+		memcpy(rxMsg.data, g_sCanFrame.rxMasg.Data, g_sCanFrame.rxMasg.DLC);	
+		canDispatch(&ObjDict_Data, &rxMsg);
+	}	
 }
 
 

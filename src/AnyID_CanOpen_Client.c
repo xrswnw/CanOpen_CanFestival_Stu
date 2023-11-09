@@ -1,4 +1,4 @@
-#include "demo.h"
+#include "AnyID_CanOpen_Client.h"
 
 //////////////////////////////////////////////////SDO配置(服务器)///////////////////////////////////////////////////////////////////
 /* 子索引个数 */
@@ -72,7 +72,7 @@ UNS16 ControlWordAxis2 = 1000;
 subindex ObjDict_Index2000[] =                                                    
 {
 	{RW, int8, sizeof(UNS8), (void *)&ObjDict_highestSubIndex_obj2000}, 
-	{RW, uint8, sizeof(UNS8), (void *)&ControlWordAxis1},
+	{RW, uint8, sizeof(UNS8), (void *)&ControlWordAxis1},					//测试映射按键
 	{RW, uint16, sizeof(UNS16), (void *)&ControlWordAxis2},
 };
 ///////////////////////////////////////////////字典配置/////////////////////////////////////////////////////////////////////////////
@@ -156,8 +156,8 @@ UNS8 ObjDict_highestSubIndex_obj1016 = 0;
 UNS32 ObjDict_obj1016[1];
 /* 心跳报文定时事件状态，主站才需要配置，  */
 TIMER_HANDLE ObjDict_heartBeatTimers[1];
-/* 从站上报心跳包间隔时间，从站才需要配置 */
-UNS16 ObjDict_obj1017 = 2000;
+/* 从站上报心跳包间隔时间，从站才需要配置 单位ms*/
+UNS16 ObjDict_obj1017 = 2000;			
 /* 节点保护报文，每60秒询问一次所有节点在线情况 */
 UNS16 ObjDict_obj100C = 60;
 /* 节点保护报文，3次不回复则认为节点掉线 */	

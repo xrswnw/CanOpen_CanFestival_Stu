@@ -158,16 +158,30 @@ void Sys_Init(void)
 
 void Sys_LedTask(void)
 {
+
     if(a_CheckStateBit(g_nSysState, SYS_STAT_RUNLED))
     {
-       
-#if SYS_ENABLE_WDT
-WDG_FeedIWDog();
-#endif
-u8 data[20] = {1,2,3,4,5,8,7,4};
-Sys_Delayms(100);
-	 //Med_Can_Send_Msg (data,5);
+		g_nLedDelayTime++;
+		
+		if(g_nLedDelayTime & 0x01)
+		{
+			Sys_LedOn();
+		}
+		else
+		{
+			Sys_LedOff();
+		}
+	#if SYS_ENABLE_WDT
+	WDG_FeedIWDog();
+	#endif
+
     }
   
 }
 
+void Sys_PdoTask()
+{
+
+	ControlWordAxis1 = Periph_GetKeyValue();
+
+}

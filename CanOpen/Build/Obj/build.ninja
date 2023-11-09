@@ -21,7 +21,6 @@ rule browsedata
 
 #Build steps
 build dcf.pbi : index dcf.xcl
-build demo.pbi : index demo.xcl
 build emcy.pbi : index emcy.xcl
 build lifegrd.pbi : index lifegrd.xcl
 build lss.pbi : index lss.xcl
@@ -52,9 +51,11 @@ build stm32f10x_spi.pbi : index stm32f10x_spi.xcl
 build stm32f10x_tim.pbi : index stm32f10x_tim.xcl
 build stm32f10x_usart.pbi : index stm32f10x_usart.xcl
 build AnyID_CanOpen_Can_HL.pbi : index AnyID_CanOpen_Can_HL.xcl
+build AnyID_CanOpen_Client.pbi : index AnyID_CanOpen_Client.xcl
 build AnyID_CanOpen_Device.pbi : index AnyID_CanOpen_Device.xcl
 build AnyID_CanOpen_FRam.pbi : index AnyID_CanOpen_FRam.xcl
 build AnyID_CanOpen_FRam_HL.pbi : index AnyID_CanOpen_FRam_HL.xcl
+build AnyID_CanOpen_Periph_HL.pbi : index AnyID_CanOpen_Periph_HL.xcl
 build AnyID_CanOpen_RTC.pbi : index AnyID_CanOpen_RTC.xcl
 build AnyID_CanOpen_SysCfg.pbi : index AnyID_CanOpen_SysCfg.xcl
 build AnyID_CanOpen_SysTick_HL.pbi : index AnyID_CanOpen_SysTick_HL.xcl
@@ -63,13 +64,13 @@ build AnyID_CanOpen_WDG_HL.pbi : index AnyID_CanOpen_WDG_HL.xcl
 build AnyID_FRam.pbi : index AnyID_FRam.xcl
 build AnyID_Stdlib.pbi : index AnyID_Stdlib.xcl
 build AnyID_Uart_Receive.pbi : index AnyID_Uart_Receive.xcl
-build CanOpen_part0.pbi : link dcf.pbi demo.pbi emcy.pbi lifegrd.pbi lss.pbi nmtMaster.pbi nmtSlave.pbi
-build CanOpen_part1.pbi : link objacces.pbi pdo.pbi sdo.pbi states.pbi sync.pbi timer.pbi system_stm32f10x.pbi
-build CanOpen_part2.pbi : link main.pbi stm32f10x_it.pbi misc.pbi stm32f10x_adc.pbi stm32f10x_bkp.pbi stm32f10x_can.pbi stm32f10x_dma.pbi
-build CanOpen_part3.pbi : link stm32f10x_exti.pbi stm32f10x_flash.pbi stm32f10x_gpio.pbi stm32f10x_iwdg.pbi stm32f10x_pwr.pbi stm32f10x_rcc.pbi stm32f10x_rtc.pbi
-build CanOpen_part4.pbi : link stm32f10x_spi.pbi stm32f10x_tim.pbi stm32f10x_usart.pbi AnyID_CanOpen_Can_HL.pbi AnyID_CanOpen_Device.pbi AnyID_CanOpen_FRam.pbi AnyID_CanOpen_FRam_HL.pbi
-build CanOpen_part5.pbi : link AnyID_CanOpen_RTC.pbi AnyID_CanOpen_SysCfg.pbi AnyID_CanOpen_SysTick_HL.pbi AnyID_CanOpen_Tim_HL.pbi AnyID_CanOpen_WDG_HL.pbi AnyID_FRam.pbi AnyID_Stdlib.pbi
-build CanOpen_part6.pbi : link AnyID_Uart_Receive.pbi
+build CanOpen_part0.pbi : link dcf.pbi emcy.pbi lifegrd.pbi lss.pbi nmtMaster.pbi nmtSlave.pbi objacces.pbi
+build CanOpen_part1.pbi : link pdo.pbi sdo.pbi states.pbi sync.pbi timer.pbi system_stm32f10x.pbi main.pbi
+build CanOpen_part2.pbi : link stm32f10x_it.pbi misc.pbi stm32f10x_adc.pbi stm32f10x_bkp.pbi stm32f10x_can.pbi stm32f10x_dma.pbi stm32f10x_exti.pbi
+build CanOpen_part3.pbi : link stm32f10x_flash.pbi stm32f10x_gpio.pbi stm32f10x_iwdg.pbi stm32f10x_pwr.pbi stm32f10x_rcc.pbi stm32f10x_rtc.pbi stm32f10x_spi.pbi
+build CanOpen_part4.pbi : link stm32f10x_tim.pbi stm32f10x_usart.pbi AnyID_CanOpen_Can_HL.pbi AnyID_CanOpen_Client.pbi AnyID_CanOpen_Device.pbi AnyID_CanOpen_FRam.pbi AnyID_CanOpen_FRam_HL.pbi
+build CanOpen_part5.pbi : link AnyID_CanOpen_Periph_HL.pbi AnyID_CanOpen_RTC.pbi AnyID_CanOpen_SysCfg.pbi AnyID_CanOpen_SysTick_HL.pbi AnyID_CanOpen_Tim_HL.pbi AnyID_CanOpen_WDG_HL.pbi AnyID_FRam.pbi
+build CanOpen_part6.pbi : link AnyID_Stdlib.pbi AnyID_Uart_Receive.pbi
 build CanOpen.pbd : link CanOpen_part0.pbi CanOpen_part1.pbi CanOpen_part2.pbi CanOpen_part3.pbi CanOpen_part4.pbi CanOpen_part5.pbi CanOpen_part6.pbi
 build CanOpen.pbw : browsedata CanOpen.pbd
 

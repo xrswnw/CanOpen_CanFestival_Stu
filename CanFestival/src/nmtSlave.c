@@ -115,7 +115,7 @@ void proceedNMTstateChange(CO_Data* d, Message *m)
 **
 ** @return
 **/
-UNS8 slaveSendBootUp(CO_Data* d)
+UNS8 slaveSendBootUp(CO_Data* d)//ио╬Q
 {
   Message m;
 

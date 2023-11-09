@@ -6,6 +6,7 @@ int main(void)
     while(1)
     {
         Sys_LedTask();
+		Sys_PdoTask();
     }
 }
 

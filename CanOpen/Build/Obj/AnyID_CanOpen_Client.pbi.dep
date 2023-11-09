@@ -1,5 +1,6 @@
-demo.pbi: E:\AnyID\Git\CanOpen_CanFestival_Stu\CanFestival\driver\demo.c \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanFestival\driver/demo.h \
+AnyID_CanOpen_Client.pbi: \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\src\AnyID_CanOpen_Client.c \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\inc\AnyID_CanOpen_Client.h \
   E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\data.h \
   E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/applicfg.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \

@@ -3,7 +3,7 @@
 #define _ANYID_CAN_HL_H
 
 #include "AnyID_CanOpen_Config.h"
-#include "demo.h"
+
 
 #define CAN_PORT1					CAN1
 #define CAN_INT_CHANNEL				USB_LP_CAN1_RX0_IRQn
@@ -21,13 +21,20 @@ typedef struct canParamenterInfo
     u32 canId;   
 }CAN_PARAMENTERINFO;
 
+typedef struct canFrame{
+	u8 state;
+	u32 waitTimes;
+	CanRxMsg rxMasg;
+	CanTxMsg txMasg;
+}CAN_FRAME;
 
+extern CAN_FRAME g_sCanFrame ;
 
 BOOL Can_InitInterface(CAN_PARAMENTERINFO *pParamInfo);
 
-u8 Med_Can_Send_Msg (u8* msg,u8 len);
+void Can_Receive_Msg();
 
-u8 canSend (CAN_PORT notused, Message *TxMessage);
+u8 canSend(CAN_PORT notused, Message *TxMessage);
 
 #endif 
 

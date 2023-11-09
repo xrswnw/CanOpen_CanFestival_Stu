@@ -283,7 +283,7 @@
                 <option>
                     <name>CCAllowList</name>
                     <version>1</version>
-                    <state>00000000</state>
+                    <state>10010100</state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -370,7 +370,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>0</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -379,7 +379,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>0</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules98</name>
@@ -1072,9 +1072,6 @@
             <name>$PROJ_DIR$\..\CanFestival\src\dcf.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\CanFestival\driver\demo.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\CanFestival\src\emcy.c</name>
         </file>
         <file>
@@ -1186,6 +1183,9 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Can_HL.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Client.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Device.c</name>
         </file>
         <file>
@@ -1193,6 +1193,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_FRam_HL.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Periph_HL.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_RTC.c</name>

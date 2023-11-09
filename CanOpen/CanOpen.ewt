@@ -1191,9 +1191,6 @@
             <name>$PROJ_DIR$\..\CanFestival\src\dcf.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\CanFestival\driver\demo.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\CanFestival\src\emcy.c</name>
         </file>
         <file>
@@ -1305,6 +1302,9 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Can_HL.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Client.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Device.c</name>
         </file>
         <file>
@@ -1312,6 +1312,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_FRam_HL.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Periph_HL.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_RTC.c</name>
