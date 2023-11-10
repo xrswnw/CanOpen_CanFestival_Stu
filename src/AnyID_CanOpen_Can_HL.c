@@ -109,7 +109,7 @@ void Can_Receive_Msg()
 		rxMsg.rtr = g_sCanFrame.rxMasg.RTR == (CAN_RTR_DATA ? 0 : 1);
 		rxMsg.len = g_sCanFrame.rxMasg.DLC;
 		memcpy(rxMsg.data, g_sCanFrame.rxMasg.Data, g_sCanFrame.rxMasg.DLC);	
-		canDispatch(&ObjDict_Data, &rxMsg);
+		canDispatch(&AnyId_Canopen_Client_Data, &rxMsg);
 	}	
 }
 

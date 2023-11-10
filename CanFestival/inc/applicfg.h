@@ -41,6 +41,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define UNS8   unsigned char
 #define UNS16  unsigned short
 #define UNS32  unsigned long
+#define UNS64  unsigned long long
 /*
 #define UNS24
 #define UNS40

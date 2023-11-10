@@ -1,6 +1,6 @@
 #include "AnyID_CanOpen_Periph_HL.h"
 
-const PORT_INF PERIPH_RUN_LED_1  = {GPIOA, GPIO_Pin_1};
+const PORT_INF PERIPH_RUN_LED_1  = {GPIOA, GPIO_Pin_0};
 const PORT_INF PERIPH_RUN_LED_2  = {GPIOA, GPIO_Pin_1};
 const PORT_INF PERIPH_RUN_LED_3  = {GPIOA, GPIO_Pin_2};
 

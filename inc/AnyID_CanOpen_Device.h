@@ -5,7 +5,7 @@
 #include "AnyID_CanOpen_Can_HL.h"
 #include "AnyID_CanOpen_FRam.h"
 #include "AnyID_CanOpen_Tim_HL.h"
-
+#include "AnyID_CanOpen_Periph_HL.h"
 
 
 #define DEVICE_VERSION_SIZE 50

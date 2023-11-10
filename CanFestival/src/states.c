@@ -91,7 +91,7 @@ void canDispatch(CO_Data* d, Message *m)
 			if (d->CurrentCommunicationState.csSDO)
 				proceedSDO(d,m);
 			break;
-		case NODE_GUARD:
+		case NODE_GUARD:		//节点保护		
 			if (d->CurrentCommunicationState.csLifeGuard)
 				proceedNODE_GUARD(d,m);
 			break;

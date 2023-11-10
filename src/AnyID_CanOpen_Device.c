@@ -85,6 +85,6 @@ BOOL Device_WriteDeviceParamenter(void)
 
 void Device_CanPeriphInit()
 {
-	setNodeId(&ObjDict_Data, Periph_GetAddr());
-	setState(&ObjDict_Data, Initialisation);
+	setNodeId(&AnyId_Canopen_Client_Data, 1/*Periph_GetAddr()*/);
+	setState(&AnyId_Canopen_Client_Data, Initialisation);
 }

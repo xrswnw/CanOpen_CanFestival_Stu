@@ -1183,7 +1183,7 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Can_HL.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Client.c</name>
+            <name>$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Client.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Device.c</name>

@@ -150,6 +150,7 @@ void Sys_Init(void)
 		
 		}
 	}
+	Periph_InitInterface();
 	Device_CanPeriphInit();
     Tim_InitInterface();
 	STick_InitSysTick();
@@ -158,18 +159,32 @@ void Sys_Init(void)
 
 void Sys_LedTask(void)
 {
-
+	static u8 index = 1, g_nTempTick = 0;
     if(a_CheckStateBit(g_nSysState, SYS_STAT_RUNLED))
     {
 		g_nLedDelayTime++;
-		
+		a_ClearStateBit(g_nSysState, SYS_STAT_RUNLED);
 		if(g_nLedDelayTime & 0x01)
 		{
-			Sys_LedOn();
+			PeriphLed1_Open();
+			PeriphLed2_Close();
+			PeriphLed3_Open();
 		}
 		else
 		{
-			Sys_LedOff();
+			PeriphLed1_Close();
+			PeriphLed2_Open();
+			PeriphLed3_Close();
+		}
+		
+		if(g_nTempTick >= 10)
+		{
+			Uid += 2;
+			g_nTempTick = 0;
+		}
+		else
+		{
+			g_nTempTick++;
 		}
 	#if SYS_ENABLE_WDT
 	WDG_FeedIWDog();
@@ -181,7 +196,5 @@ void Sys_LedTask(void)
 
 void Sys_PdoTask()
 {
-
-	ControlWordAxis1 = Periph_GetKeyValue();
-
+	KeyValue = Periph_GetKeyValue();
 }
