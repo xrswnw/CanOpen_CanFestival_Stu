@@ -36,7 +36,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //#define MS_TO_TIMEVAL(ms) (ms * 250)
 //#define US_TO_TIMEVAL(us) (us>>2)
 
-// The timer is incrementing every 8 us.
+
+//定时器基值修改，canfestival最低时间单位响应修改
+// The timer is incrementing every 1 us.
 #define MS_TO_TIMEVAL(ms) ((ms) * 1000)//((ms) * 125)
 #define US_TO_TIMEVAL(us) ((us))//((us)>>3)
 

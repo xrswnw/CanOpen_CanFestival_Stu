@@ -12,6 +12,7 @@ extern u32 g_nSysState;
 
 #define SYS_STAT_IDLE                   0x00000001	        //
 #define SYS_STAT_RUNLED                 0x00000002
+#define SYS_STAT_UARTTX                 0x00000004
 
 
 //≤‚ ‘
@@ -19,6 +20,7 @@ extern u32 g_nSysState;
 #define SYS_STAT_SOUND_TEST              0x40000000
 #define SYS_STAT_LTE_TEST                0x20000000
 #define SYS_STAT_GATE_TEST               0x10000000
+
 
 #define SYS_LED_DELAY                   20
 #define SYS_CHECK_CFGMODE_TIM           200
@@ -38,5 +40,5 @@ void Sys_CtrlIOInit(void);
 void Sys_Init(void);
 void Sys_LedTask(void);
 void Sys_PdoTask();
-
+void Sys_UartTask(void);
 #endif

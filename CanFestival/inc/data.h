@@ -339,7 +339,7 @@ struct struct_CO_Data {
 	/* LSS */\
 	lss_Initializer\
 }
-
+//LSS:	Layer setting service, CiA 305∂®“Â
 #ifdef __cplusplus
 };
 #endif

@@ -6,7 +6,7 @@
 #include "AnyID_CanOpen_FRam.h"
 #include "AnyID_CanOpen_Tim_HL.h"
 #include "AnyID_CanOpen_Periph_HL.h"
-
+#include "AnyID_CanOpen_RS485.h"
 
 #define DEVICE_VERSION_SIZE 50
 

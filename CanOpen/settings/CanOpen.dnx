@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>958231105</Checksum>
+        <Checksum>3460811088</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -19,8 +19,8 @@
         <ByteLimit>50</ByteLimit>
     </Stack>
     <Disassembly>
-        <InstrCount>0</InstrCount>
         <MixedMode>1</MixedMode>
+        <InstrCount>0</InstrCount>
     </Disassembly>
     <CodeCoverage>
         <Enabled>0</Enabled>
@@ -57,8 +57,23 @@
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
     <struct_types>
-        <Fmt0>Message-cob_id	4	0</Fmt0>
+        <Fmt0>CO_Data-GuardTimeTimer	4	0</Fmt0>
+        <Fmt1>CO_Data-LifeTimeTimer	4	0</Fmt1>
+        <Fmt2>CO_Data-ProducerHeartBeatTimer	4	0</Fmt2>
+        <Fmt3>CO_Data-syncTimer	4	0</Fmt3>
+        <Fmt4>Message-cob_id	4	0</Fmt4>
+        <Fmt5>indextable-index	3	0</Fmt5>
+        <Fmt6>quick_index-PDO_RCV	4	0</Fmt6>
+        <Fmt7>quick_index-PDO_RCV_MAP	4	0</Fmt7>
+        <Fmt8>quick_index-PDO_TRS	4	0</Fmt8>
+        <Fmt9>quick_index-PDO_TRS_MAP	4	0</Fmt9>
+        <Fmt10>quick_index-SDO_SVR	4	0</Fmt10>
+        <Fmt11>subindex-size	4	0</Fmt11>
     </struct_types>
+    <watch_formats>
+        <Fmt0>{W}42:AnyId_Canopen_Client_obj1800_COB_ID_used_by_PDO	4	0</Fmt0>
+        <Fmt1>{W}42:uid	4	0</Fmt1>
+    </watch_formats>
     <Trace2>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>
@@ -113,6 +128,33 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.59.9" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.83.15" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.76.10" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.70.9" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.64.9" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.137.3" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.115.11" 0 0 1 "" 0 "" 0</Bp6>
+        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.100.10" 0 0 1 "" 0 "" 0</Bp7>
+        <Bp8>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.101.5" 0 0 1 "" 0 "" 0</Bp8>
+        <Bp9>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.86.3" 0 0 1 "" 0 "" 0</Bp9>
+        <Bp10>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.95.4" 0 0 1 "" 0 "" 0</Bp10>
+        <Bp11>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.96.5" 0 0 1 "" 0 "" 0</Bp11>
+        <Bp12>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.0.1" 0 0 1 "" 0 "" 0</Bp12>
+        <Bp13>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1891.3" 0 0 1 "" 0 "" 0</Bp13>
+        <Bp14>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1897.3" 0 0 1 "" 0 "" 0</Bp14>
+        <Bp15>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1919.5" 0 0 1 "" 0 "" 0</Bp15>
+        <Bp16>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\stm32f10x_it.c}.174.9" 0 0 1 "" 0 "" 0</Bp16>
+        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\stm32f10x_it.c}.171.5" 0 0 1 "" 0 "" 0</Bp17>
+        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.57.5" 0 0 1 "" 0 "" 0</Bp18>
+        <Bp19>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.36.5" 0 0 1 "" 0 "" 0</Bp19>
+        <Bp20>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.48.5" 0 0 1 "" 0 "" 0</Bp20>
+        <Count>21</Count>
+    </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -122,6 +164,10 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>1</Mode>
@@ -139,26 +185,4 @@
         <Probe0>I0</Probe0>
         <ProbeSetup0>2 1 1 2 0 0</ProbeSetup0>
     </PowerProbe>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.59.9" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.83.15" 0 0 1 "" 0 "" 0</Bp1>
-        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.76.10" 0 0 1 "" 0 "" 0</Bp2>
-        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.70.9" 0 0 1 "" 0 "" 0</Bp3>
-        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.64.9" 0 0 1 "" 0 "" 0</Bp4>
-        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.137.3" 0 0 1 "" 0 "" 0</Bp5>
-        <Bp6>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.115.11" 0 0 1 "" 0 "" 0</Bp6>
-        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.100.10" 0 0 1 "" 0 "" 0</Bp7>
-        <Bp8>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.101.5" 0 0 1 "" 0 "" 0</Bp8>
-        <Bp9>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.86.3" 0 0 1 "" 0 "" 0</Bp9>
-        <Bp10>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.95.4" 0 0 1 "" 0 "" 0</Bp10>
-        <Bp11>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.96.5" 0 0 1 "" 0 "" 0</Bp11>
-        <Count>12</Count>
-    </Breakpoints2>
-    <Aliases>
-        <Count>0</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
 </settings>

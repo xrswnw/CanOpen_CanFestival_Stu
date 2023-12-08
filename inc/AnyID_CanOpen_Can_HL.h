@@ -11,6 +11,21 @@
 	
 
 #define CAN_SEND_TIMEOUT    ((uint32_t)0x0000FFFF)
+
+//典型通信参数
+#define CAN_BUD_1000K_PSCVALUE			4
+#define CAN_BUD_800K_PSCVALUE			5
+#define CAN_BUD_500K_PSCVALUE			8
+#define CAN_BUD_250K_PSCVALUE			16
+#define CAN_BUD_125K_PSCVALUE			32
+#define CAN_BUD_50K_PSCVALUE			80
+#define CAN_BUD_20K_PSCVALUE			200
+#define CAN_BUD_10K_PSCVALUE			400
+
+
+
+
+
 typedef struct canParamenterInfo
 {
 	u8 mode;

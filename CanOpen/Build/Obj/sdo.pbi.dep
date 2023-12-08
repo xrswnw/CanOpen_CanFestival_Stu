@@ -1,34 +1,31 @@
-sdo.pbi: E:\AnyID\Git\CanOpen_CanFestival_Stu\CanFestival\src\sdo.c \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
-  C:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\canfestival.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/applicfg.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdio.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/can.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/data.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/def.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\config.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/objdictdef.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/objacces.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\applicfg.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/sdo.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/timers.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\timerscfg.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/pdo.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\def.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/states.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/lifegrd.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/sync.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/nmtSlave.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/nmtMaster.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/emcy.h \
+sdo.pbi: \
   E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\sysdep.h \
-  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc/config.h
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\data.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\emcy.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\nmtMaster.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\nmtSlave.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\sync.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\lifegrd.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\states.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\pdo.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\timerscfg.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\timers.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\sdo.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\objacces.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\objdictdef.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\config.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\def.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\applicfg.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\can.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdio.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\..\CanFestival\inc\canfestival.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
+  E:\AnyID\Git\CanOpen_CanFestival_Stu\CanFestival\src\sdo.c

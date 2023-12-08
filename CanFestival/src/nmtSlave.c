@@ -41,7 +41,7 @@
 ** @param d
 ** @param m
 **/
-void proceedNMTstateChange(CO_Data* d, Message *m)
+void proceedNMTstateChange(CO_Data* d, Message *m)//ÍøÂç×´Ì¬±ä»¯
 {
   if( d->nodeState == Pre_operational ||
       d->nodeState == Operational ||

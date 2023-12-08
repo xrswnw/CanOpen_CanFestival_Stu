@@ -1,5 +1,5 @@
-#ifndef _ANYID_UART_RECEIVE_H
-#define _ANYID_UART_RECEIVE_H
+#ifndef _ANYID_CANOPEN_UART_RECEIVE_H
+#define _ANYID_CANOPEN_UART_RECEIVE_H
 
 #include "AnyID_Type.h"
 #include "AnyID_Stdlib.h"

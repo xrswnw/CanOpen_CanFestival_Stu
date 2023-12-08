@@ -72,7 +72,7 @@ BOOL Can_InitInterface(CAN_PARAMENTERINFO *pParamInfo)
 }
 
 
-u8 canSend (CAN_PORT notused, Message *TxMessage)
+u8 canSend(CAN_PORT notused, Message *TxMessage)
 {	
 	u8 mailBox = 0, relust = 0;
 
@@ -109,7 +109,7 @@ void Can_Receive_Msg()
 		rxMsg.rtr = g_sCanFrame.rxMasg.RTR == (CAN_RTR_DATA ? 0 : 1);
 		rxMsg.len = g_sCanFrame.rxMasg.DLC;
 		memcpy(rxMsg.data, g_sCanFrame.rxMasg.Data, g_sCanFrame.rxMasg.DLC);	
-		canDispatch(&AnyId_Canopen_Client_Data, &rxMsg);
+		canDispatch(&AnyId_Canopen_Slave_Data, &rxMsg);					//can帧接收处理函数
 	}	
 }
 

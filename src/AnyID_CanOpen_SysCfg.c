@@ -83,10 +83,11 @@ void Sys_CfgPeriphClk(FunctionalState state)
                            RCC_APB2Periph_GPIOB |
                            RCC_APB2Periph_GPIOC |
                            RCC_APB2Periph_AFIO  |
-							   RCC_APB2Periph_TIM1|
+							RCC_APB2Periph_TIM1|
                            RCC_APB2Periph_GPIOD, state);
     RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1 | RCC_AHBPeriph_DMA2, state);
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1 |
+						   RCC_APB1Periph_USART3 |
                            RCC_APB1Periph_PWR    |
                            RCC_APB1Periph_BKP , state);
 }
@@ -152,6 +153,7 @@ void Sys_Init(void)
 	}
 	Periph_InitInterface();
 	Device_CanPeriphInit();
+	RS485_Init(UART_BAUDRARE);
     Tim_InitInterface();
 	STick_InitSysTick();
     Sys_EnableInt();
@@ -159,7 +161,7 @@ void Sys_Init(void)
 
 void Sys_LedTask(void)
 {
-	static u8 index = 1, g_nTempTick = 0;
+	static u32 g_nTempTick = 0;
     if(a_CheckStateBit(g_nSysState, SYS_STAT_RUNLED))
     {
 		g_nLedDelayTime++;
@@ -179,8 +181,10 @@ void Sys_LedTask(void)
 		
 		if(g_nTempTick >= 10)
 		{
-			Uid += 2;
+			uid += 2;
 			g_nTempTick = 0;
+			//u8 wnull[3] = {0x11, 0x22, 0x33};
+			//Uart_WriteBuffer(wnull, 3);
 		}
 		else
 		{
@@ -196,5 +200,57 @@ void Sys_LedTask(void)
 
 void Sys_PdoTask()
 {
-	KeyValue = Periph_GetKeyValue();
+	keyValue = Periph_GetKeyValue();
+	addrValue = Periph_GetAddr();
+}
+
+
+
+
+void Sys_UartTask(void)
+{
+    //串口错误处理:重新初始化
+    if(USART_GetFlagStatus(UART_PORT, USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE))
+    {
+        USART_ClearFlag(UART_PORT, USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE);
+        Uart_InitInterface(UART_BAUDRARE);
+        Uart_ConfigInt();
+        Uart_EnableInt(ENABLE, DISABLE);
+    }
+
+    //串口数据帧解析
+    //串口数据帧解析
+    if(Uart_IsRcvFrame(g_sRS485RcvFrame))
+    {
+        memcpy(&g_sUartRcvTempFrame, &g_sRS485RcvFrame, sizeof(g_sRS485RcvFrame));
+        Uart_ResetFrame(&g_sRS485RcvFrame);
+        
+        if(g_sUartRcvTempFrame.length >= UART_FRAME_MIN_LEN)
+        {
+            u16 crc1 = 0, crc2 = 0;
+            
+            crc1 = Uart_GetFrameCrc(g_sUartRcvTempFrame.buffer, g_sUartRcvTempFrame.length);
+            crc2 = a_GetCrc(g_sUartRcvTempFrame.buffer + UART_FRAME_POS_LEN, g_sUartRcvTempFrame.length - 4);
+
+            if(crc1 == crc2)
+            {
+                u16 txLen = 1;//Reader_ProcessUartFrame(g_sUartRcvTempFrame.buffer, g_sUartRcvTempFrame.length);
+                if(txLen > 0)
+                {
+                    a_SetStateBit(g_nSysState, SYS_STAT_UARTTX);
+                }
+            }
+        }
+    }
+    
+    if(a_CheckStateBit(g_nSysState, SYS_STAT_UARTTX))
+    {
+        a_ClearStateBit(g_nSysState, SYS_STAT_UARTTX);
+        //Uart_WriteBuffer(g_sReaderRspFrame.buffer, g_sReaderRspFrame.len);
+       // if(g_sReaderRspFrame.cmd == READER_CMD_RESET)
+        {
+            Sys_Delayms(5);
+            Sys_SoftReset();
+        }
+    }
 }

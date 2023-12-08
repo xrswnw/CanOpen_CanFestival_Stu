@@ -2,13 +2,7 @@
 
 const u8 DEVICE_VERSION[DEVICE_VERSION_SIZE]@0x08005000 = "SM5001 23102100 GD322302";
 
-
 DEVICE_PARAMS g_sDeviceParams = {0};
-
-
-
-
-
 
 void Device_ReadDeviceParamenter(void)                             		     //OK
 {
@@ -46,12 +40,15 @@ void Device_ReadDeviceParamenter(void)                             		     //OK
     {
         memset(&g_sDeviceParams, 0, sizeof(DEVICE_PARAMS));
         
-		//bud = PLCK1 / (psc * (tbs1 + 1 + tbs2 + 1 + 1)) = 60/(10 *(4 + 1 + 5+ 1+ 1)) 
+		//v 典型值：1000K、800k、500K、250k、125k、50k、20k、10k
+		//v = PLCK1 / (psc * (tbs1 + 1 + tbs2 + 1 + 1)) = 60/(10 *(6 + 1 + 6 + 1+ 1)) 
+		//v = 4000 / psc
+		//psc : 1 to 5000
 		g_sDeviceParams.canPara.mode = CAN_Mode_Normal;			
-		g_sDeviceParams.canPara.psc = 20;
-		g_sDeviceParams.canPara.tbs1 = CAN_BS1_5tq;
-		g_sDeviceParams.canPara.tbs2 = CAN_BS2_6tq;
-		g_sDeviceParams.canPara.tsjw = CAN_SJW_2tq;
+		g_sDeviceParams.canPara.psc = CAN_BUD_1000K_PSCVALUE;	//可变参数，调整can波特率
+		g_sDeviceParams.canPara.tbs1 = CAN_BS1_7tq;				//暂时固定
+		g_sDeviceParams.canPara.tbs2 = CAN_BS2_7tq;				//暂时固定
+		g_sDeviceParams.canPara.tsjw = CAN_SJW_2tq;				//暂时固定
         Device_WriteDeviceParamenter();
     }
     else if(b == TRUE && bBackup == FALSE)
@@ -85,6 +82,7 @@ BOOL Device_WriteDeviceParamenter(void)
 
 void Device_CanPeriphInit()
 {
-	setNodeId(&AnyId_Canopen_Client_Data, 1/*Periph_GetAddr()*/);
-	setState(&AnyId_Canopen_Client_Data, Initialisation);
+	setNodeId(&AnyId_Canopen_Slave_Data, /*1*/Periph_GetAddr());
+	setState(&AnyId_Canopen_Slave_Data, Initialisation);			//设备上线
+	//	setState(&AnyId_Canopen_Client_Data, Operational);			//设备动作
 }

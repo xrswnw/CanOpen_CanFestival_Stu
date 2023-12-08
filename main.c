@@ -7,6 +7,7 @@ int main(void)
     {
         Sys_LedTask();
 		Sys_PdoTask();
+		Sys_UartTask();
     }
 }
 

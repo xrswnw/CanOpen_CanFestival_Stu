@@ -1,0 +1,12 @@
+#include "AnyID_CanOpen_RS485.h"
+
+UART_RCVFRAME g_sUartRcvTempFrame = {0};
+UART_RCVFRAME g_sRS485RcvFrame = {0};
+void RS485_Init(u32 bud)
+{
+
+	Uart_InitInterface(bud);
+	Uart_ConfigInt();
+	Uart_EnableInt(ENABLE, DISABLE);
+
+}

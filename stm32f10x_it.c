@@ -23,6 +23,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "AnyID_CanOpen_Can_HL.h"
+#include "AnyID_CanOpen_RS485.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -144,7 +145,7 @@ void SysTick_Handler(void)
     
     
     //Uart_IncIdleTime(STICK_TIME_MS, g_sUartRcvFrame);
-   // Uart_IncIdleTime(STICK_TIME_MS, g_sW232RcvFrame);
+   Uart_IncIdleTime(STICK_TIME_MS, g_sRS485RcvFrame);
   
 }
 
@@ -165,7 +166,21 @@ void RTC_IRQHandler(void)
     }
 }
 
-
+void Uart_IRQHandler(void)
+{
+    if(USART_GetITStatus(UART_PORT, USART_IT_RXNE) != RESET)
+    {
+        u8 byte = 0;
+        USART_ClearITPendingBit(UART_PORT, USART_IT_RXNE);
+        byte = Uart_ReadByte();
+        Uart_ReceiveFrame(byte, &g_sRS485RcvFrame);
+    }
+    else if(USART_GetITStatus(UART_PORT, USART_IT_ORE) != RESET)
+    {
+        Uart_ReadByte();
+    }
+    UART_PORT->SR &= (~0x3FF);
+}
 
 
 void CAN_IRQHandler(void)

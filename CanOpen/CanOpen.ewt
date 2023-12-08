@@ -1302,9 +1302,6 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Can_HL.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Client.c</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Device.c</name>
         </file>
         <file>
@@ -1317,7 +1314,16 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Periph_HL.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_RS485.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_RTC.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c</name>
@@ -1329,6 +1335,9 @@
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Tim_HL.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\src\AnyID_CanOpen_Uart_Receive.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\src\AnyID_CanOpen_WDG_HL.c</name>
         </file>
         <file>
@@ -1336,9 +1345,6 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\AnyID_Embedded\V1.1.0\AnyID_lib_V1.1.0\src\AnyID_Stdlib.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\src\AnyID_Uart_Receive.c</name>
         </file>
     </group>
 </project>

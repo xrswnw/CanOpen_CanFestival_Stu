@@ -3,6 +3,7 @@
 
 #include "AnyID_CanOpen_Config.h"
 
+#define TIM_PORT				TIM1
 
 
 	
