@@ -113,7 +113,7 @@ void Sys_CfgNVIC(void)
 
 
 const PORT_INF SYS_RUN_LED  = {GPIOB, GPIO_Pin_1};
-RCC_ClocksTypeDef g_sSysclockFrep;
+
 
 void Sys_CtrlIOInit(void)
 {
@@ -143,25 +143,27 @@ void Sys_Init(void)
 #endif
 	FRam_InitInterface();
 	Device_ReadDeviceParamenter();
-	RCC_GetClocksFreq(&g_sSysclockFrep); 
- 	if(Can_InitInterface(&g_sDeviceParams.canPara))
-	{			//can初始化失败
+	//RCC_ClocksTypeDef g_sSysclockFrep; RCC_GetClocksFreq(&g_sSysclockFrep);    查看时钟频率
+ 	if(Can_InitInterface())//can初始化失败
+	{			
 		while(1)
 		{
 		
 		}
 	}
 	Periph_InitInterface();
-	Device_CanPeriphInit();
 	RS485_Init(UART_BAUDRARE);
     Tim_InitInterface();
 	STick_InitSysTick();
+	
+	//
+	Sys_StateInit();	//设备上线，bootup
     Sys_EnableInt();
 }
 
 void Sys_LedTask(void)
 {
-	static u32 g_nTempTick = 0;
+	static u32 g_nTempTick = 0, j = 0;
     if(a_CheckStateBit(g_nSysState, SYS_STAT_RUNLED))
     {
 		g_nLedDelayTime++;
@@ -183,8 +185,13 @@ void Sys_LedTask(void)
 		{
 			uid += 2;
 			g_nTempTick = 0;
+			testbuf[j++] += (testbuf[j] % 5 + j + 1);
 			//u8 wnull[3] = {0x11, 0x22, 0x33};
-			//Uart_WriteBuffer(wnull, 3);
+			//Uart_WriteBuffer(wnull, 3);	
+			if(j > 2)
+			{
+				j = 0;
+			}
 		}
 		else
 		{
@@ -209,7 +216,7 @@ void Sys_PdoTask()
 
 void Sys_UartTask(void)
 {
-    //串口错误处理:重新初始化
+/*
     if(USART_GetFlagStatus(UART_PORT, USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE))
     {
         USART_ClearFlag(UART_PORT, USART_FLAG_ORE | USART_FLAG_NE | USART_FLAG_FE | USART_FLAG_PE);
@@ -218,8 +225,7 @@ void Sys_UartTask(void)
         Uart_EnableInt(ENABLE, DISABLE);
     }
 
-    //串口数据帧解析
-    //串口数据帧解析
+
     if(Uart_IsRcvFrame(g_sRS485RcvFrame))
     {
         memcpy(&g_sUartRcvTempFrame, &g_sRS485RcvFrame, sizeof(g_sRS485RcvFrame));
@@ -246,11 +252,20 @@ void Sys_UartTask(void)
     if(a_CheckStateBit(g_nSysState, SYS_STAT_UARTTX))
     {
         a_ClearStateBit(g_nSysState, SYS_STAT_UARTTX);
-        //Uart_WriteBuffer(g_sReaderRspFrame.buffer, g_sReaderRspFrame.len);
-       // if(g_sReaderRspFrame.cmd == READER_CMD_RESET)
+        Uart_WriteBuffer(g_sReaderRspFrame.buffer, g_sReaderRspFrame.len);
+        if(g_sReaderRspFrame.cmd == READER_CMD_RESET)
         {
             Sys_Delayms(5);
             Sys_SoftReset();
         }
     }
+*/
+}
+
+
+void Sys_StateInit()
+{
+	setNodeId(&AnyId_Canopen_Slave_Data, Periph_GetAddr());
+	setState(&AnyId_Canopen_Slave_Data, Initialisation);			//设备上线
+	
 }

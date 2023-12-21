@@ -5,7 +5,7 @@
 #define ANYID_CANOPEN_SLAVE_H
 
 #include "data.h"
-
+#include "AnyID_CanOpen_Device.h"
 /* Prototypes of function provided by object dictionnary */
 UNS32 AnyId_Canopen_Slave_valueRangeTest (UNS8 typeValue, void * value);
 const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorCode, ODCallback_t **callbacks);
@@ -15,5 +15,5 @@ extern CO_Data AnyId_Canopen_Slave_Data;
 extern UNS64 uid;		/* Mapped at index 0x2000, subindex 0x00*/
 extern UNS8 keyValue;		/* Mapped at index 0x2001, subindex 0x00*/
 extern UNS8 addrValue;		/* Mapped at index 0x2002, subindex 0x00*/
-
+extern u16 testbuf[128];
 #endif // ANYID_CANOPEN_SLAVE_H

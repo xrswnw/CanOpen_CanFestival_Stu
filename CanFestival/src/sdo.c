@@ -2030,7 +2030,7 @@ UNS8 writeNetworkDictCallBackAI (CO_Data* d, UNS8 nodeId, UNS16 index,
 	UNS16 lastIndex;
 	UNS16 offset;
 	UNS8 nodeIdServer;
-	/*UNS8 i;*/
+	//UNS8 i;
 
 	ret = _writeNetworkDict (d, nodeId, index, subIndex, count, dataType, data, Callback, endianize, useBlockMode);
 	if(ret == 0xFE)
@@ -2042,12 +2042,12 @@ UNS8 writeNetworkDictCallBackAI (CO_Data* d, UNS8 nodeId, UNS16 index,
 			MSG_ERR(0x1AC6, "writeNetworkDict : No SDO client index found", 0);
 			return 0xFF;
 		}
-		/*i = 0;*/
+		//i = 0;
 		while (offset <= lastIndex)
 		{
 			if (d->objdict[offset].bSubCount <= 3)
 			{
-				MSG_ERR(0x1AC8, "Subindex 3  not found at index ", 0x1280 + i);
+				MSG_ERR(0x1AC8, "Subindex 3  not found at index ", 0x1280 + 0/*i*/);
 				return 0xFF;
 			}
 			nodeIdServer = *(UNS8*) d->objdict[offset].pSubindex[3].pObject;
@@ -2192,7 +2192,7 @@ UNS8 readNetworkDictCallbackAI (CO_Data* d, UNS8 nodeId, UNS16 index, UNS8 subIn
 	UNS16 lastIndex;
 	UNS16 offset;
 	UNS8 nodeIdServer;
-	/*UNS8 i;*/
+	//UNS8 i;
 
 	ret = _readNetworkDict (d, nodeId, index, subIndex, dataType, Callback, useBlockMode);
 	if(ret == 0xFE)
@@ -2204,12 +2204,12 @@ UNS8 readNetworkDictCallbackAI (CO_Data* d, UNS8 nodeId, UNS16 index, UNS8 subIn
 			MSG_ERR(0x1AC6, "writeNetworkDict : No SDO client index found", 0);
 			return 0xFF;
 		}
-		/*i = 0;*/
+		//i = 0;
 		while (offset <= lastIndex)
 		{
 			if (d->objdict[offset].bSubCount <= 3)
 			{
-				MSG_ERR(0x1AC8, "Subindex 3  not found at index ", 0x1280 + i);
+				MSG_ERR(0x1AC8, "Subindex 3  not found at index ", 0x1280 + 0/*i*/);
 				return 0xFF;
 			}
 			nodeIdServer = *(UNS8*) d->objdict[offset].pSubindex[3].pObject;

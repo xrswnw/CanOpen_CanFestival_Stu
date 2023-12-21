@@ -55,18 +55,24 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define REAL32	float
 #define REAL64 double
 #include "can.h"
-
+#include "AnyID_CanOpen_RS485.h"
 // MSG functions
 // not finished, the strings have to be placed to the flash and printed out 
 // using the printf_P function
-/// Definition of MSG_ERR
+// Definition of MSG_ERR
 // ---------------------
+#define DEBUG_ERR_CONSOLE_ON						//开启DEBUG		
+//#define DEBUG_WAR_CONSOLE_ON			
+//Uart_WriteStr
+//stm32f103测试，开启debug硬件错误，怀疑内存问题
+//实际调试，编译器代码优化，中级，否则硬件错误，怀疑内存问题
+
 #ifdef DEBUG_ERR_CONSOLE_ON
-#define MSG_ERR(num, str, val)      \
-          printf(num, ' ');	\
-          printf(str);		\
-          printf(val);		\
-          printf('\n');
+#define MSG_ERR(num, str, val)      do{\
+									   	Debug_InfoClear();\
+									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
+									   	Uart_WriteStr(g_nRs485DebugInfo);\
+									   }while(0)
 #else
 #    define MSG_ERR(num, str, val)
 #endif
@@ -74,13 +80,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /// Definition of MSG_WAR
 // ---------------------
 #ifdef DEBUG_WAR_CONSOLE_ON
-#define MSG_WAR(num, str, val)      \
-          printf(num, ' ');	\
-          printf(str);		\
-          printf(val);		\
-          printf('\n');
+#define MSG_WAR(num, str, val)     do{\
+									   	Debug_InfoClear();\
+									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
+									   	Uart_WriteStr(g_nRs485DebugInfo);\
+									  }while(0)
 #else
-#    define MSG_WAR(num, str, val)			//debug暂留，需重映射
+#    define MSG_WAR(num, str, val)			//debug暂留，可重映射输出
 #endif
 
 typedef void* CAN_HANDLE;

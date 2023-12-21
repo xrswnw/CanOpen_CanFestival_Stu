@@ -4,7 +4,7 @@
 #include "AnyID_Type.h"
 #include "AnyID_Stdlib.h"
 #include "stm32f10x_conf.h"
-#include "AnyId_Canopen_Slave.h"
+
 #include <stdio.h>
 #include <string.h>
 

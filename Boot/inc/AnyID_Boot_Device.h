@@ -88,16 +88,7 @@
 											
 
 typedef struct deviceSenverTxBuff{
-    u8 num;
-    u8 index;
-    u8 result;
-    u16 state;
-    u16 len;
-    u8 id[EC20_CNT_OP_NUM];
-    u8 op[EC20_CNT_OP_NUM];
-    u8 txBuffer[DEVICE_SERVER_RSP_LEN];
-    u8 repeat[EC20_CNT_OP_NUM];
-    u32 to[EC20_CNT_OP_NUM];
+
     u32 tick;
 }DEVICE_SENVER_TXBUFFER;
 
@@ -109,18 +100,7 @@ typedef struct deviceSenverTxBuff{
 #define DEVICE_SOFTVERSION_MD5                  32
 #define DEVICE_SOFTVERSION_DATA_LEN             2048
 typedef struct deviceUpDataInfo{
-    BOOL tF;
-    u8 type;
-    u8 state;
-    u8 flag;
-    u8 step;
-    u8 num;
-	u8 linkTick;
-    u8 data[DEVICE_SOFTVERSION_DATA_LEN+ 2];
-    char name[DEVICE_SOFTVERSION_NAME_LEN + 2];
-    char tid[DEVICE_SOFTVERSION_TID_LEN + 2];
-    char bufferSize[DEVICE_SOFTVERSION_BUFFER_SIZE + 2];
-    char md5[DEVICE_SOFTVERSION_MD5 + 2];
+
     u32 tick;
 }DEVICE_UPDATA_INFO;
 

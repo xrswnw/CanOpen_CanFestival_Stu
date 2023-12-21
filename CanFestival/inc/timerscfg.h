@@ -24,22 +24,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifndef __TIMERSCFG_H__
 #define __TIMERSCFG_H__
 
-// Whatever your microcontroller, the timer wont work if
-// TIMEVAL is not at least on 32 bits
-#define TIMEVAL UNS32
 
-// The timer of the AVR counts from 0000 to 0xFFFF in CTC mode (it can be
-// shortened setting OCR3A eg. to get 2ms instead of 2.048ms)
+#define TIMEVAL UNS32
 #define TIMEVAL_MAX 0xFFFF
 
-// The timer is incrementing every 4 us.
-//#define MS_TO_TIMEVAL(ms) (ms * 250)
-//#define US_TO_TIMEVAL(us) (us>>2)
 
 
-//定时器基值修改，canfestival最低时间单位响应修改
-// The timer is incrementing every 1 us.
-#define MS_TO_TIMEVAL(ms) ((ms) * 1000)//((ms) * 125)
-#define US_TO_TIMEVAL(us) ((us))//((us)>>3)
+//canfestival最低时间单位，依据定时器基值修改，此工程定时器基址1us
+
+#define MS_TO_TIMEVAL(ms) ((ms) * 1000)
+#define US_TO_TIMEVAL(us) ((us))
 
 #endif

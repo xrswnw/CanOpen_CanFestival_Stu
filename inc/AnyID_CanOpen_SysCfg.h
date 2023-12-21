@@ -3,8 +3,11 @@
 
 #include "AnyID_CanOpen_SysTick_HL.h"
 #include "AnyID_CanOpen_RTC.h"
-#include "AnyID_CanOpen_Device.h"
 #include "AnyID_CanOpen_WDG_HL.h"
+#include "AnyID_CanOpen_Tim_HL.h"
+#include "AnyID_CanOpen_Can_HL.h"
+#include "AnyID_CanOpen_RS485.h"
+#include "AnyID_CanOpen_Periph_HL.h"
 
 
 extern u32 g_nSysState;
@@ -41,4 +44,5 @@ void Sys_Init(void);
 void Sys_LedTask(void);
 void Sys_PdoTask();
 void Sys_UartTask(void);
+void Sys_StateInit();
 #endif

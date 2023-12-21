@@ -143,32 +143,13 @@ void SysTick_Handler(void)
         a_SetStateBit(g_nSysState, SYS_STAT_RUNLED | SYS_STAT_UPDATA | SYS_STAT_WR_RE_FLASH);
     }
 
-    Uart_IncIdleTime(STICK_TIME_MS, g_sEC20RcvFrame);
+
 }
 
 u8 g_nEC20RxByte = 0;
 void EC20_IRQHandler(void)
 {
-    if(USART_GetITStatus(EC20_PORT, USART_IT_RXNE) != RESET)
-    {
-        g_nEC20RxByte = EC20_ReadByte();
 
-        g_sEC20RcvFrame.buffer[g_sEC20RcvFrame.index++] = g_nEC20RxByte;
-        if(g_sEC20RcvFrame.index < UART_BUFFER_MAX_LEN)
-        {
-            g_sEC20RcvFrame.state |= UART_FLAG_RCV;
-        }
-        else
-        {
-           g_sEC20RcvFrame.state = UART_STAT_END; 
-        }
-        g_sEC20RcvFrame.idleTime = 0;
-    }
-    else
-    {
-        EC20_ReadByte();
-    }
-    EC20_PORT->SR &= (~0x3FF);
 }
 
 

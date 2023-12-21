@@ -734,9 +734,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     UNS8 AnyId_Canopen_Slave_highestSubIndex_obj1A00 = 8; /* number of subindex - 1*/
                     UNS32 AnyId_Canopen_Slave_obj1A00[] = 
                     {
-                      0x20000040,	/* 536870976 */
-                      0x0,	/* 0 */
-                      0x0,	/* 0 */
+                      0x20000030,	/* 536870976 */
+                      0x20030010,	/* 0 */
+                      0,	/* 0 */
                       0x0,	/* 0 */
                       0x0,	/* 0 */
                       0x0,	/* 0 */
@@ -835,9 +835,10 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      };
 
 /* index 0x2000 :   Mapped variable uid */
+					u16 testbuf[128] = {0};
                     subindex AnyId_Canopen_Slave_Index2000[] = 
                      {
-                       { RW, uint64, sizeof (UNS64), (void*)&uid }
+                       { RW, uint16, 6, (void*)&testbuf }
                      };
 
 /* index 0x2001 :   Mapped variable keyValue */
@@ -850,6 +851,11 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     subindex AnyId_Canopen_Slave_Index2002[] = 
                      {
                        { RW, uint8, sizeof (UNS8), (void*)&addrValue }
+                     };
+/* index 0x2003 :   Mapped variable addrValue */
+                    subindex AnyId_Canopen_Slave_Index2003[] = 
+                     {
+                       { RW, uint16, 1, (void*)&(keyValue) }
                      };
 
 /**************************************************************************/
@@ -890,6 +896,7 @@ const indextable AnyId_Canopen_Slave_objdict[] =
   { (subindex*)AnyId_Canopen_Slave_Index2000,sizeof(AnyId_Canopen_Slave_Index2000)/sizeof(AnyId_Canopen_Slave_Index2000[0]), 0x2000},
   { (subindex*)AnyId_Canopen_Slave_Index2001,sizeof(AnyId_Canopen_Slave_Index2001)/sizeof(AnyId_Canopen_Slave_Index2001[0]), 0x2001},
   { (subindex*)AnyId_Canopen_Slave_Index2002,sizeof(AnyId_Canopen_Slave_Index2002)/sizeof(AnyId_Canopen_Slave_Index2002[0]), 0x2002},
+    { (subindex*)AnyId_Canopen_Slave_Index2003,sizeof(AnyId_Canopen_Slave_Index2003)/sizeof(AnyId_Canopen_Slave_Index2003[0]), 0x2003},
 };
 
 const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorCode, ODCallback_t **callbacks)
@@ -929,6 +936,7 @@ const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorC
 		case 0x2000: i = 29;break;
 		case 0x2001: i = 30;break;
 		case 0x2002: i = 31;break;
+		case 0x2003: i = 32;break;
 		default:
 			*errorCode = OD_NO_SUCH_OBJECT;
 			return NULL;
