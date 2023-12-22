@@ -268,4 +268,8 @@ void Sys_StateInit()
 	setNodeId(&AnyId_Canopen_Slave_Data, Periph_GetAddr());
 	setState(&AnyId_Canopen_Slave_Data, Initialisation);			//设备上线
 	
+	for(u8 i = 0; i < 128; i++)
+	{
+		testbuf[i] = i;
+	}
 }

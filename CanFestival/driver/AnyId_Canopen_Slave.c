@@ -857,6 +857,12 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      {
                        { RW, uint16, 1, (void*)&(keyValue) }
                      };
+/* index 0x2004 :   Mapped variable uid */
+
+                    subindex AnyId_Canopen_Slave_Index2004[] = 
+                     {
+                       { RW, uint8, 128, (void*)&testbuf }
+                     };
 
 /**************************************************************************/
 /* Declaration of pointed variables                                       */
@@ -896,7 +902,8 @@ const indextable AnyId_Canopen_Slave_objdict[] =
   { (subindex*)AnyId_Canopen_Slave_Index2000,sizeof(AnyId_Canopen_Slave_Index2000)/sizeof(AnyId_Canopen_Slave_Index2000[0]), 0x2000},
   { (subindex*)AnyId_Canopen_Slave_Index2001,sizeof(AnyId_Canopen_Slave_Index2001)/sizeof(AnyId_Canopen_Slave_Index2001[0]), 0x2001},
   { (subindex*)AnyId_Canopen_Slave_Index2002,sizeof(AnyId_Canopen_Slave_Index2002)/sizeof(AnyId_Canopen_Slave_Index2002[0]), 0x2002},
-    { (subindex*)AnyId_Canopen_Slave_Index2003,sizeof(AnyId_Canopen_Slave_Index2003)/sizeof(AnyId_Canopen_Slave_Index2003[0]), 0x2003},
+  { (subindex*)AnyId_Canopen_Slave_Index2003,sizeof(AnyId_Canopen_Slave_Index2003)/sizeof(AnyId_Canopen_Slave_Index2003[0]), 0x2003},
+  { (subindex*)AnyId_Canopen_Slave_Index2004,sizeof(AnyId_Canopen_Slave_Index2004)/sizeof(AnyId_Canopen_Slave_Index2004[0]), 0x2004},
 };
 
 const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorCode, ODCallback_t **callbacks)
@@ -937,6 +944,7 @@ const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorC
 		case 0x2001: i = 30;break;
 		case 0x2002: i = 31;break;
 		case 0x2003: i = 32;break;
+		case 0x2004: i = 33;break;
 		default:
 			*errorCode = OD_NO_SUCH_OBJECT;
 			return NULL;

@@ -62,7 +62,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // Definition of MSG_ERR
 // ---------------------
 #define DEBUG_ERR_CONSOLE_ON						//开启DEBUG		
-//#define DEBUG_WAR_CONSOLE_ON			
+#define DEBUG_WAR_CONSOLE_ON			
 //Uart_WriteStr
 //stm32f103测试，开启debug硬件错误，怀疑内存问题
 //实际调试，编译器代码优化，中级，否则硬件错误，怀疑内存问题
@@ -71,7 +71,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define MSG_ERR(num, str, val)      do{\
 									   	Debug_InfoClear();\
 									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
-									   	Uart_WriteStr(g_nRs485DebugInfo);\
+									   	Uart_Delayms(2);\
+										Uart_WriteStr(g_nRs485DebugInfo);\
 									   }while(0)
 #else
 #    define MSG_ERR(num, str, val)
@@ -83,7 +84,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #define MSG_WAR(num, str, val)     do{\
 									   	Debug_InfoClear();\
 									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
-									   	Uart_WriteStr(g_nRs485DebugInfo);\
+									   	Uart_Delayms(2);\
+									   	Uart_WriteWarStr(g_nRs485DebugInfo);\
 									  }while(0)
 #else
 #    define MSG_WAR(num, str, val)			//debug暂留，可重映射输出

@@ -59,35 +59,41 @@ void Uart_EnableInt(FunctionalState rxState, FunctionalState txState)
     USART_ITConfig(UART_PORT, USART_IT_RXNE, rxState);
     USART_ITConfig(UART_PORT, USART_IT_TC, txState);
 }
-
-void Uart_WriteByte(u8 ch)
-{
-    while(((UART_PORT)->SR & USART_FLAG_TXE) == (u16)RESET);
-	(UART_PORT)->DR = (ch & (u16)0x01FF);
-}
-
 void Uart_Delayms(u32 n)
 {
     n *= 0x3800;
     n++;
     while(n--);
 }
+void Uart_WriteByte(u8 ch)
+{
+	
+    while(((UART_PORT)->SR & USART_FLAG_TXE) == (u16)RESET);
+	(UART_PORT)->DR = (ch & (u16)0x01FF);
+}
+
+
 
 void Uart_WriteBuffer(u8 *pFrame, u16 len)
 {
     u16 i = 0;
     Uart_Enable485Tx();
-	Uart_Delayms(1);
     for(i = 0; i < len; i++)
     {
 		Uart_WriteByte(pFrame[i]);
     }
     Uart_Chk485TxOver();
-	Uart_Delayms(1);
     Uart_Enable485Rx();
 }
 
 void Uart_WriteStr(char *str)
+{
+    Uart_WriteBuffer((u8 *)str, strlen(str));
+    Uart_WriteByte('\r');
+    Uart_WriteByte('\n');
+}
+
+void Uart_WriteWarStr(char *str)
 {
     Uart_WriteBuffer((u8 *)str, strlen(str));
     Uart_WriteByte('\r');
