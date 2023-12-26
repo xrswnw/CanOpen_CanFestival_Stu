@@ -7,8 +7,8 @@
 
 
 
-#define TIM_PORT				TIM1
-
+#define TIM_PORT					TIM1
+#define TIM_PSE_SYS_FREQ			(SYS_CLOCK_FREQ / 1000000) - 1				//Ö÷Æµ120Mhz
 
 	
 void setTimer(TIMEVAL value);

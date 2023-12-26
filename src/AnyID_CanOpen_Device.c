@@ -1,8 +1,22 @@
 #include "AnyID_CanOpen_Device.h"
 
-const u8 DEVICE_VERSION[DEVICE_VERSION_SIZE]@0x08005000 = "CANOPEN 23121200 G231212";
+const u8 DEVICE_VERSION[DEVICE_VERSION_SIZE]@0x08005000 = "M3331 23121201 G231212";
 
 DEVICE_PARAMS g_sDeviceParams = {0};
+
+
+void Device_Init()
+{
+
+
+
+
+
+
+}
+
+
+
 void Device_ReadDeviceParamenter(void)
 {
      BOOL b = FALSE, bBackup = FALSE;

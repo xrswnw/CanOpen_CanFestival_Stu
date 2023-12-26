@@ -29,22 +29,22 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /** definitions used for object dictionary access. ie SDO Abort codes . (See DS 301 v.4.02 p.48)
  */
 #define OD_SUCCESSFUL 	             0x00000000
-#define OD_READ_NOT_ALLOWED          0x06010001
-#define OD_WRITE_NOT_ALLOWED         0x06010002
-#define OD_NO_SUCH_OBJECT            0x06020000
-#define OD_NOT_MAPPABLE              0x06040041
-#define OD_LENGTH_DATA_INVALID       0x06070010
-#define OD_NO_SUCH_SUBINDEX 	     0x06090011
-#define OD_VALUE_RANGE_EXCEEDED      0x06090030 /* Value range test result */
-#define OD_VALUE_TOO_LOW             0x06090031 /* Value range test result */
-#define OD_VALUE_TOO_HIGH            0x06090032 /* Value range test result */
+#define OD_READ_NOT_ALLOWED          0x06010001			//目标不可读
+#define OD_WRITE_NOT_ALLOWED         0x06010002			//目标不可写
+#define OD_NO_SUCH_OBJECT            0x06020000			//目标不存在于对象词典
+#define OD_NOT_MAPPABLE              0x06040041			//对象无法被映射至PDO
+#define OD_LENGTH_DATA_INVALID       0x06070010			//数据类型不匹配
+#define OD_NO_SUCH_SUBINDEX 	     0x06090011			//目标子索引不存在
+#define OD_VALUE_RANGE_EXCEEDED      0x06090030			//参数无效（仅下载）
+#define OD_VALUE_TOO_LOW             0x06090031			//写入参数值太高（仅下载）
+#define OD_VALUE_TOO_HIGH            0x06090032			//写入参数值太低（仅下载）
 /* Others SDO abort codes 
  */
-#define SDOABT_TOGGLE_NOT_ALTERNED   0x05030000
-#define SDOABT_TIMED_OUT             0x05040000
-#define SDOABT_OUT_OF_MEMORY         0x05040005 /* Size data exceed SDO_MAX_LENGTH_TRANSFER */
-#define SDOABT_GENERAL_ERROR         0x08000000 /* Error size of SDO message */
-#define SDOABT_LOCAL_CTRL_ERROR      0x08000021 
+#define SDOABT_TOGGLE_NOT_ALTERNED   0x05030000			//切换位未交替
+#define SDOABT_TIMED_OUT             0x05040000			//超时
+#define SDOABT_OUT_OF_MEMORY         0x05040005			//内存溢出					/* Size data exceed SDO_MAX_LENGTH_TRANSFER */	
+#define SDOABT_GENERAL_ERROR         0x08000000			//一般错误					/* Error size of SDO message */	
+#define SDOABT_LOCAL_CTRL_ERROR      0x08000021			//本地控制错误
 
 /******************** CONSTANTS ****************/
 
@@ -60,7 +60,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 /* Should not be modified */
 #define Rx 0
 #define Tx 1
-/*						//Anyid_Type定义
+/*						//Anyid_Type已定义，此处注释
 #ifndef TRUE
 #define TRUE  1
 #endif

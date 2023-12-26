@@ -59,6 +59,8 @@ struct struct_s_PDO_status {
  * 
  * SYNCHRO(n) means that the PDO will be transmited every n SYNC signal.
  */
+
+//PDO通信参数
 #define TRANS_EVERY_N_SYNC(n) (n) /*n = 1 to 240 */
 #define TRANS_SYNC_ACYCLIC    0    /* Trans after reception of n SYNC. n = 1 to 240 */
 #define TRANS_SYNC_MIN        1    /* Trans after reception of n SYNC. n = 1 to 240 */

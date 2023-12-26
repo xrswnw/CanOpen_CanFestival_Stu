@@ -143,7 +143,7 @@ void Sys_Init(void)
 #endif
 	FRam_InitInterface();
 	Device_ReadDeviceParamenter();
-	//RCC_ClocksTypeDef g_sSysclockFrep; RCC_GetClocksFreq(&g_sSysclockFrep);    查看时钟频率
+	RCC_ClocksTypeDef g_sSysclockFrep; RCC_GetClocksFreq(&g_sSysclockFrep);    //查看时钟频率
  	if(Can_InitInterface())//can初始化失败
 	{			
 		while(1)
@@ -267,9 +267,22 @@ void Sys_StateInit()
 {
 	setNodeId(&AnyId_Canopen_Slave_Data, Periph_GetAddr());
 	setState(&AnyId_Canopen_Slave_Data, Initialisation);			//设备上线
-	
+	Sys_DefaultInfoInit();
+
+}
+
+
+void Sys_DefaultInfoInit()
+{
+	memcpy(AnyId_Canopen_Slave_obj1008, DEVICE_VERSION, DEVICE_VERSION_DEVICE_NAME_LEN);
+	memcpy(AnyId_Canopen_Slave_obj1009, (u8 *)&DEVICE_VERSION[DEVICE_VERSION_DEVICE_NAME_LEN + 1], DEVICE_VERSION_DEVICE_SOFTWARE_LEN);
+	memcpy(AnyId_Canopen_Slave_obj100A, (u8 *)&DEVICE_VERSION[DEVICE_VERSION_DEVICE_NAME_LEN + 1 + DEVICE_VERSION_DEVICE_SOFTWARE_LEN + 1], DEVICE_VERSION_DEVICE_HARDWARE_LEN);
+
+	//初始参数赋值
 	for(u8 i = 0; i < 128; i++)
 	{
 		testbuf[i] = i;
 	}
+
+
 }

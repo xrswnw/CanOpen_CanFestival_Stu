@@ -86,7 +86,7 @@ void Uart_WriteBuffer(u8 *pFrame, u16 len)
     Uart_Enable485Rx();
 }
 
-void Uart_WriteStr(char *str)
+void Uart_WriteErrStr(char *str)
 {
     Uart_WriteBuffer((u8 *)str, strlen(str));
     Uart_WriteByte('\r');

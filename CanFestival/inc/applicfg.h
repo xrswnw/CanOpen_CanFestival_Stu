@@ -70,9 +70,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifdef DEBUG_ERR_CONSOLE_ON
 #define MSG_ERR(num, str, val)      do{\
 									   	Debug_InfoClear();\
-									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
-									   	Uart_Delayms(2);\
-										Uart_WriteStr(g_nRs485DebugInfo);\
+									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,0x%X", num, str, val);\
+									   	Uart_Delayms(10);\
+										Uart_WriteErrStr(g_nRs485DebugInfo);\
 									   }while(0)
 #else
 #    define MSG_ERR(num, str, val)
@@ -83,8 +83,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #ifdef DEBUG_WAR_CONSOLE_ON
 #define MSG_WAR(num, str, val)     do{\
 									   	Debug_InfoClear();\
-									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,%d", num, str, val);\
-									   	Uart_Delayms(2);\
+									   	sprintf(g_nRs485DebugInfo, "0x%X,%s,0x%X", num, str, val);\
+									   	Uart_Delayms(10);\
 									   	Uart_WriteWarStr(g_nRs485DebugInfo);\
 									  }while(0)
 #else

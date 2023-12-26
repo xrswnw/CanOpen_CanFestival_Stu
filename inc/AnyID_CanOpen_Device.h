@@ -34,6 +34,10 @@ typedef struct deviceParamenter{
 
 extern DEVICE_PARAMS g_sDeviceParams;
 
+#define DEVICE_VERSION_DEVICE_NAME_LEN			5
+#define DEVICE_VERSION_DEVICE_SOFTWARE_LEN		8
+#define DEVICE_VERSION_DEVICE_HARDWARE_LEN		7
+extern const u8 DEVICE_VERSION[DEVICE_VERSION_SIZE];
 
 
 

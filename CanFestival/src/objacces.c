@@ -225,8 +225,9 @@ UNS32 _setODentry( CO_Data* d,
             }
         }
 #endif
-      errorCode = (*d->valueRangeTest)(dataType, pSourceData);
-      if (errorCode) {
+      //errorCode = (*d->valueRangeTest)(dataType, pSourceData);			//暂时注释
+	  errorCode = (*d->valueParamentsChk)(bSubindex, ptrTable, pSourceData);			//写词典时参数校验，防止越界，可自定
+	  if (errorCode) {
         accessDictionaryError(wIndex, bSubindex, szData, *pExpectedSize, errorCode);
         return errorCode;
       }

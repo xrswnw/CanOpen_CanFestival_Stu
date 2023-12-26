@@ -102,12 +102,12 @@ typedef struct td_indextable
 } indextable;
 
 typedef struct s_quick_index{
-	UNS16 SDO_SVR;
-	UNS16 SDO_CLT;
-	UNS16 PDO_RCV;
-	UNS16 PDO_RCV_MAP;
-	UNS16 PDO_TRS;
-	UNS16 PDO_TRS_MAP;
+	UNS16 SDO_SVR;				//SDO server的索引
+	UNS16 SDO_CLT;				//SDO client的索引
+	UNS16 PDO_RCV;				//RPDO的索引
+	UNS16 PDO_RCV_MAP;			//RPDO映射对象的索引
+	UNS16 PDO_TRS;				//TPDO的索引
+	UNS16 PDO_TRS_MAP;			//TPDO映射对象的索引
 }quick_index;
 
 

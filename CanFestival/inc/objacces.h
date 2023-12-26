@@ -48,6 +48,7 @@ extern "C" {
 
 
 typedef UNS32 (*valueRangeTest_t)(UNS8 typeValue, void *Value);
+typedef UNS32 (*valueParaments_t)(UNS8 bSubindex, const indextable *ptrTable, void *Value);		// 2.
 typedef void (* storeODSubIndex_t)(CO_Data* d, UNS16 wIndex, UNS8 bSubindex);
 void _storeODSubIndex (CO_Data* d, UNS16 wIndex, UNS8 bSubindex);
 

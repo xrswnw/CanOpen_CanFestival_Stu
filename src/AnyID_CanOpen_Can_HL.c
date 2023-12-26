@@ -40,7 +40,7 @@ BOOL Can_InitInterface()
 	CAN_InitStructure.CAN_Mode = pCanOpenPara->canPara.CAN_Mode;
 	CAN_InitStructure.CAN_Prescaler = pCanOpenPara->canPara.CAN_Prescaler;
 	
-	if(CAN_Init(CAN_PORT1, &CAN_InitStructure) == CANINITOK)		
+	if(CAN_Init(CAN_HARDPORT, &CAN_InitStructure) == CANINITOK)		
 	{
 		CAN_FilterInitStructure.CAN_FilterNumber = pCanOpenPara->canFilterPara.CAN_FilterMode;  					
 		CAN_FilterInitStructure.CAN_FilterMode = pCanOpenPara->canFilterPara.CAN_FilterMode;   
@@ -60,8 +60,6 @@ BOOL Can_InitInterface()
 		NVIC_Init(&NVIC_InitStructure);
 		
 		CAN_ITConfig(CAN1, CAN_IT_FMP0, ENABLE);
-		
-		bOk = FALSE;
 	}
 	else
 	{
@@ -78,12 +76,13 @@ u8 canSend(CAN_PORT notused, Message *TxMessage)
 	g_sCanFrame.waitTimes = 0;
 	g_sCanFrame.txMasg.StdId = TxMessage->cob_id;   			// 标准标识符
 	g_sCanFrame.txMasg.IDE = CAN_ID_STD;   						// 使用标准标识符
-	g_sCanFrame.txMasg.RTR = (TxMessage->rtr == CAN_RTR_DATA ? 0 : 2);	
+	g_sCanFrame.txMasg.RTR = (TxMessage->rtr == CAN_RTR_DATA ? 0 : 1);	
 	g_sCanFrame.txMasg.DLC = TxMessage->len;
 	memcpy(g_sCanFrame.txMasg.Data, TxMessage->data, TxMessage->len);
-	mailBox = CAN_Transmit(CAN_PORT1, &g_sCanFrame.txMasg);   // 发送报文   
+	mailBox = CAN_Transmit(CAN_HARDPORT, &g_sCanFrame.txMasg);   // 发送报文   
 	// 等待发送结束
-    while(CAN_TransmitStatus(CAN_PORT1, mailBox) != CANTXOK && g_sCanFrame.waitTimes < CAN_SEND_TIMEOUT)
+    while(CAN_TransmitStatus(CAN_HARDPORT, mailBox) != CANTXOK && 
+	g_sCanFrame.waitTimes < CAN_SEND_TIMEOUT)
     {
         g_sCanFrame.waitTimes++;
     }
@@ -101,14 +100,14 @@ void Can_Receive_Msg()
 {		   		   
 	Message rxMsg;
 	// 没有接收到数据,直接退出 
-	if(CAN_MessagePending(CAN_PORT1,CAN_FIFO0))
+	if(CAN_MessagePending(CAN_HARDPORT,CAN_FIFO0))
 	{
-		CAN_Receive(CAN_PORT1, CAN_FIFO0, &g_sCanFrame.rxMasg);   // 读取数据	
+		CAN_Receive(CAN_HARDPORT, CAN_FIFO0, &g_sCanFrame.rxMasg);   // 读取数据	
 		rxMsg.cob_id = g_sCanFrame.rxMasg.StdId;
 		rxMsg.rtr = g_sCanFrame.rxMasg.RTR == (CAN_RTR_DATA ? 0 : 1);
 		rxMsg.len = g_sCanFrame.rxMasg.DLC;
 		memcpy(rxMsg.data, g_sCanFrame.rxMasg.Data, g_sCanFrame.rxMasg.DLC);	
-		canDispatch(&AnyId_Canopen_Slave_Data, &rxMsg);					//can帧接收处理函数,此处可做处理，选择是否接入Can Open
+		canDispatch(&AnyId_Canopen_Slave_Data, &rxMsg);					//can帧调度函数,此处可做处理，选择是否接入Can Open
 	}	
 }
 

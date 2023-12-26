@@ -8,6 +8,7 @@
 #include "AnyID_CanOpen_Device.h"
 /* Prototypes of function provided by object dictionnary */
 UNS32 AnyId_Canopen_Slave_valueRangeTest (UNS8 typeValue, void * value);
+UNS32 AnyId_Canopen_Slave_valueParamentsChk(UNS8 bSubindex, const indextable *ptrTable, void * value);
 const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorCode, ODCallback_t **callbacks);
 
 /* Master node data struct */
@@ -16,4 +17,7 @@ extern UNS64 uid;		/* Mapped at index 0x2000, subindex 0x00*/
 extern UNS8 keyValue;		/* Mapped at index 0x2001, subindex 0x00*/
 extern UNS8 addrValue;		/* Mapped at index 0x2002, subindex 0x00*/
 extern u16 testbuf[128];
+extern UNS8 AnyId_Canopen_Slave_obj1008[10];
+extern UNS8 AnyId_Canopen_Slave_obj1009[10];
+extern UNS8 AnyId_Canopen_Slave_obj100A[10];
 #endif // ANYID_CANOPEN_SLAVE_H

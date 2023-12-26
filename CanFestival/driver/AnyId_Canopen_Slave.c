@@ -15,6 +15,8 @@ UNS8 addrValue = 0x0;		/* Mapped at index 0x2002, subindex 0x00 */
 /**************************************************************************/
 
 #define valueRange_EMC 0x9F /* Type for index 0x1003 subindex 0x00 (only set of value 0 is possible) */
+
+//作为参数判断,调用位置哪里合适？？？？？？？？？？？？？？？？？？？？？？？？？
 UNS32 AnyId_Canopen_Slave_valueRangeTest (UNS8 typeValue, void * value)
 {
   switch (typeValue) {
@@ -24,6 +26,45 @@ UNS32 AnyId_Canopen_Slave_valueRangeTest (UNS8 typeValue, void * value)
   }
   return 0;
 }
+
+
+/*更改部分源码，添加针对目的索引更改数据进行校验，校验失败返回错误
+	主要更改部分：
+		1.data.h, line 68, line 260
+		2.objacces.h, line 51
+		3.objacces.c, line 229
+		4.由工具生成的OD文件，无此函数，编译提示报错，需自行添加
+		5.此函数修正,可作为扩展
+*/
+UNS32 AnyId_Canopen_Slave_valueParamentsChk(UNS8 bSubindex, const indextable *ptrTable, void * value)
+{
+	UNS32 errorCode = OD_SUCCESSFUL;
+  
+	switch (ptrTable->index) 
+	{
+		case 0x2005:
+			if(bSubindex == 0x01)
+			{
+				if(*(u32 *)value > 1000)
+				{
+					errorCode = OD_VALUE_RANGE_EXCEEDED;
+				}
+			}
+			else if(bSubindex == 0x02)
+			{
+				if(*(u16 *)value > 100)
+				{
+					errorCode = OD_VALUE_RANGE_EXCEEDED;
+				}
+			}
+			break;
+		default:
+			break;
+	}
+
+	return errorCode;
+}
+
 
 /**************************************************************************/
 /* The node id                                                            */
@@ -92,21 +133,21 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                     UNS32 AnyId_Canopen_Slave_obj1006 = 0x0;   /* 0 */
 
 /* index 0x1008 :   Manufacturer Device Name. */
-                    UNS8 AnyId_Canopen_Slave_obj1008[10] = "AnyId";
+                    UNS8 AnyId_Canopen_Slave_obj1008[10];
                     subindex AnyId_Canopen_Slave_Index1008[] = 
                      {
                        { RO, visible_string, 10, (void*)&AnyId_Canopen_Slave_obj1008 }
                      };
 
 /* index 0x1009 :   Manufacturer Hardware Version. */
-                    UNS8 AnyId_Canopen_Slave_obj1009[10] = "AnyId";
+                    UNS8 AnyId_Canopen_Slave_obj1009[10];
                     subindex AnyId_Canopen_Slave_Index1009[] = 
                      {
                        { RO, visible_string, 10, (void*)&AnyId_Canopen_Slave_obj1009 }
                      };
 
 /* index 0x100A :   Manufacturer Software Version. */
-                    UNS8 AnyId_Canopen_Slave_obj100A[visible_string] = "CanOpen1";
+                    UNS8 AnyId_Canopen_Slave_obj100A[10];
                     subindex AnyId_Canopen_Slave_Index100A[] = 
                      {
                        { RO, visible_string , 10, (void*)&AnyId_Canopen_Slave_obj100A }
@@ -863,6 +904,16 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      {
                        { RW, uint8, 128, (void*)&testbuf }
                      };
+/* index 0x2005 :   Mapped variable uid */
+					u32 value = 0;
+					u16 value2 = 0;
+					UNS8 AnyId_Canopen_Slave_highestSubIndex_obj2005 = 2; /* number of subindex - 1*/
+                    subindex AnyId_Canopen_Slave_Index2005[] = 
+                     {
+						{ RO, uint8, sizeof (UNS8), (void*)&AnyId_Canopen_Slave_highestSubIndex_obj2005 },
+                       { RW, uint32, 4, (void*)&value },
+					   { RW, uint16, 2, (void*)&value2 }
+                     };
 
 /**************************************************************************/
 /* Declaration of pointed variables                                       */
@@ -904,6 +955,7 @@ const indextable AnyId_Canopen_Slave_objdict[] =
   { (subindex*)AnyId_Canopen_Slave_Index2002,sizeof(AnyId_Canopen_Slave_Index2002)/sizeof(AnyId_Canopen_Slave_Index2002[0]), 0x2002},
   { (subindex*)AnyId_Canopen_Slave_Index2003,sizeof(AnyId_Canopen_Slave_Index2003)/sizeof(AnyId_Canopen_Slave_Index2003[0]), 0x2003},
   { (subindex*)AnyId_Canopen_Slave_Index2004,sizeof(AnyId_Canopen_Slave_Index2004)/sizeof(AnyId_Canopen_Slave_Index2004[0]), 0x2004},
+  { (subindex*)AnyId_Canopen_Slave_Index2005,sizeof(AnyId_Canopen_Slave_Index2005)/sizeof(AnyId_Canopen_Slave_Index2005[0]), 0x2005},
 };
 
 const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorCode, ODCallback_t **callbacks)
@@ -913,7 +965,11 @@ const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorC
 	switch(wIndex){
 		case 0x1000: i = 0;break;
 		case 0x1001: i = 1;break;
-		case 0x1003: i = 2;*callbacks = AnyId_Canopen_Slave_Index1003_callbacks; break;
+		case 0x1003: 
+					i = 2;
+					*callbacks = AnyId_Canopen_Slave_Index1003_callbacks; 
+					
+					break;
 		case 0x1005: i = 3;*callbacks = AnyId_Canopen_Slave_Index1005_callbacks; break;
 		case 0x1008: i = 4;break;
 		case 0x1009: i = 5;break;
@@ -945,6 +1001,11 @@ const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorC
 		case 0x2002: i = 31;break;
 		case 0x2003: i = 32;break;
 		case 0x2004: i = 33;break;
+		case 0x2005: 
+			
+			i = 34;
+			
+			break;
 		default:
 			*errorCode = OD_NO_SUCH_OBJECT;
 			return NULL;
@@ -960,6 +1021,13 @@ const indextable * AnyId_Canopen_Slave_scanIndexOD (UNS16 wIndex, UNS32 * errorC
  */
 s_PDO_status AnyId_Canopen_Slave_PDO_status[4] = {s_PDO_status_Initializer,s_PDO_status_Initializer,s_PDO_status_Initializer,s_PDO_status_Initializer};
 
+/*
+quick_index直接指明部分重要参数在词典中的位置，以便快速定位
+	如此设备做SDO从机，SDO参数在0x1200内，位于AnyId_Canopen_Slave_objdict[12];,即起始12，终12
+	RPDO参数在0x1400内，位于AnyId_Canopen_Slave_Data[13]，到0x1403为止，即从AnyId_Canopen_Slave_objdict[13]始，AnyId_Canopen_Slave_objdict[16]止
+	
+	因此观之，若想要在字典中添加参数，若从PDO_TRS_MAP之后的为止添加，则AnyId_Canopen_Slave_firstIndex和AnyId_Canopen_Slave_lastIndex无需变更，否则按实际位置修改
+*/
 const quick_index AnyId_Canopen_Slave_firstIndex = {
   12, /* SDO_SVR */
   0, /* SDO_CLT */

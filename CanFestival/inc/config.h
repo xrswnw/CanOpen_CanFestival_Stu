@@ -4,11 +4,11 @@
 /* Needed defines by Canfestival lib */
 #define MAX_CAN_BUS_ID 1
 /* New define, if SDO_MAX_LENGTH_TRANSFERT is exceeded allocate data buffer dynamically */
-#define SDO_DYNAMIC_BUFFER_ALLOCATION
-#define SDO_DYNAMIC_BUFFER_ALLOCATION_SIZE 	(1024)
+#define SDO_DYNAMIC_BUFFER_ALLOCATION							//动态内存开关
+#define SDO_DYNAMIC_BUFFER_ALLOCATION_SIZE 	(2048)
 #define SDO_MAX_LENGTH_TRANSFER				32
-#define SDO_MAX_SIMULTANEOUS_TRANSFERS 		5
-#define NMT_MAX_NODE_ID						2
+#define SDO_MAX_SIMULTANEOUS_TRANSFERS 		5					//最大同时传输的SDO数目
+#define NMT_MAX_NODE_ID						128					//支持保存的节点状态数据，最大128
 #define SDO_TIMEOUT_MS						8000U
 #define MAX_NB_TIMER						8
 

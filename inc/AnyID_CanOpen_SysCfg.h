@@ -45,4 +45,5 @@ void Sys_LedTask(void);
 void Sys_PdoTask();
 void Sys_UartTask(void);
 void Sys_StateInit();
+void Sys_DefaultInfoInit();
 #endif

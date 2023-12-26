@@ -60,12 +60,12 @@ struct struct_CO_Data {
 	s_PDO_status *PDO_status;
 	TIMER_HANDLE *RxPDO_EventTimers;
 	void (*RxPDO_EventTimers_Handler)(CO_Data*, UNS32);
-	const quick_index *firstIndex;
-	const quick_index *lastIndex;
+	const quick_index *firstIndex;					//主要保存对象索引值
+	const quick_index *lastIndex;					//
 	const UNS16 *ObjdictSize;
-	const UNS8 *iam_a_slave;
-	valueRangeTest_t valueRangeTest;
-	
+	const UNS8 *iam_a_slave;						//初始化固定本设备为主机（0）/从机
+	valueRangeTest_t valueRangeTest;				//变量校验，写词典时会调用,只针对数据类型校验，不泛用
+	valueParaments_t valueParamentsChk;				//增加目的索引值区分校验。    1
 	/* SDO */
 	s_transfer transfers[SDO_MAX_SIMULTANEOUS_TRANSFERS];
 	/* s_sdo_parameter *sdo_parameters; */
@@ -257,6 +257,7 @@ struct struct_CO_Data {
 	& NODE_PREFIX ## _ObjdictSize,       /* ObjdictSize */\
 	& NODE_PREFIX ## _iam_a_slave,       /* iam_a_slave */\
 	NODE_PREFIX ## _valueRangeTest,      /* valueRangeTest */\
+	NODE_PREFIX ## _valueParamentsChk,      /* 增加 */\
 	\
 	/* SDO, structure s_transfer */\
 	{\

@@ -923,7 +923,7 @@ UNS8 proceedSDO (CO_Data* d, Message *m)
 				}
 				/* Reset the wathdog */
 				RestartSDO_TIMER(line)
-					index = d->transfers[line].index;
+				index = d->transfers[line].index;
 				subIndex = d->transfers[line].subIndex;
 				/* test of the toggle; */
 				if (d->transfers[line].toggle != getSDOt(m->data[0])) {
