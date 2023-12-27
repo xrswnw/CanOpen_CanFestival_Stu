@@ -70,7 +70,8 @@ BOOL Can_InitInterface()
 
 
 u8 canSend(CAN_PORT notused, Message *TxMessage)
-{	
+{
+	static u32 canComErr = 0; 
 	u8 mailBox = 0, relust = 0;
 
 	g_sCanFrame.waitTimes = 0;
@@ -90,7 +91,16 @@ u8 canSend(CAN_PORT notused, Message *TxMessage)
     if(g_sCanFrame.waitTimes < CAN_SEND_TIMEOUT)
     {
        relust = CANTXOK;
+	   canComErr = 0;
     }
+	else
+	{
+		canComErr ++;
+		if(canComErr >= 3)
+		{
+			setState(&AnyId_Canopen_Slave_Data, Stopped);			//设备上线	
+		}
+	}
 	
 	return relust;		
 }

@@ -37,14 +37,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  * */
 /* Should not be modified */
 enum enum_nodeState {
-  Initialisation  = 0x00, 
-  Disconnected    = 0x01,
-  Connecting      = 0x02,
-  Preparing       = 0x02,
-  Stopped         = 0x04,
-  Operational     = 0x05,
-  Pre_operational = 0x7F,
-  Unknown_state   = 0x0F
+  Initialisation  = 0x00, 			//初始化态
+  Disconnected    = 0x01,			//连接断开
+  Connecting      = 0x02,			//连接中
+  Preparing       = 0x02,			//准备态
+  Stopped         = 0x04,			//停止态
+  Operational     = 0x05,			//操作态
+  Pre_operational = 0x7F,			//预操作态
+  Unknown_state   = 0x0F			//上电初始化未知态
 };
 
 typedef enum enum_nodeState e_nodeState;

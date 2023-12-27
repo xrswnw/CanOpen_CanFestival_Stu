@@ -61,8 +61,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // using the printf_P function
 // Definition of MSG_ERR
 // ---------------------
-#define DEBUG_ERR_CONSOLE_ON						//开启DEBUG		
-#define DEBUG_WAR_CONSOLE_ON			
+//#define DEBUG_ERR_CONSOLE_ON						//开启DEBUG		
+//#define DEBUG_WAR_CONSOLE_ON			
 //Uart_WriteStr
 //stm32f103测试，开启debug硬件错误，怀疑内存问题
 //实际调试，编译器代码优化，中级，否则硬件错误，怀疑内存问题

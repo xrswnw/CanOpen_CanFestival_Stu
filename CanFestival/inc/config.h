@@ -12,7 +12,7 @@
 #define SDO_TIMEOUT_MS						8000U
 #define MAX_NB_TIMER						8
 
-#define SDO_BLOCK_SIZE						16    //≤‚ ‘ÃÌº”
+#define SDO_BLOCK_SIZE						16   
 
 // CANOPEN_BIG_ENDIAN is not defined
 #define CANOPEN_LITTLE_ENDIAN				1

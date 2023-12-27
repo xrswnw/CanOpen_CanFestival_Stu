@@ -3,7 +3,7 @@
 const u8 DEVICE_VERSION[DEVICE_VERSION_SIZE]@0x08005000 = "M3331 23121201 G231212";
 
 DEVICE_PARAMS g_sDeviceParams = {0};
-
+DEVICE_INFO g_sDeviceInfo = {0};
 
 void Device_Init()
 {

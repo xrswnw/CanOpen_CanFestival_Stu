@@ -31,8 +31,17 @@ typedef struct deviceParamenter{
 	CAN_FilterInitTypeDef canFilterPara;
 	u32 crc;
 }DEVICE_PARAMS;
-
 extern DEVICE_PARAMS g_sDeviceParams;
+
+#define DEVICE_FLAG_RESET					0x01
+typedef struct deviceInfo{
+	u8 state;
+	u8 flag;
+
+
+
+}DEVICE_INFO;	
+extern DEVICE_INFO g_sDeviceInfo;
 
 #define DEVICE_VERSION_DEVICE_NAME_LEN			5
 #define DEVICE_VERSION_DEVICE_SOFTWARE_LEN		8

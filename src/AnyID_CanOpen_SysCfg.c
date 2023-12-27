@@ -151,7 +151,12 @@ void Sys_Init(void)
 		
 		}
 	}
+	else
+	{
+		setState(&AnyId_Canopen_Slave_Data, Initialisation);		
+	}
 	Periph_InitInterface();
+	PeriphLedOff();
 	RS485_Init(UART_BAUDRARE);
     Tim_InitInterface();
 	STick_InitSysTick();
@@ -164,10 +169,17 @@ void Sys_Init(void)
 void Sys_LedTask(void)
 {
 	static u32 g_nTempTick = 0, j = 0;
+	CO_Data *od = NULL;
+	
+	
+	
+	od = &AnyId_Canopen_Slave_Data;
     if(a_CheckStateBit(g_nSysState, SYS_STAT_RUNLED))
     {
 		g_nLedDelayTime++;
 		a_ClearStateBit(g_nSysState, SYS_STAT_RUNLED);
+		
+		/*
 		if(g_nLedDelayTime & 0x01)
 		{
 			PeriphLed1_Open();
@@ -196,7 +208,56 @@ void Sys_LedTask(void)
 		else
 		{
 			g_nTempTick++;
+		}*/
+		
+	//区分从机状态，做不同指示		
+	if(od->nodeState == Initialisation)
+	{
+		if(g_nLedDelayTime & 0x01)
+		{
+			PeriphLed2_Open();
+			PeriphLed3_Open();
 		}
+		else
+		{
+			PeriphLed1_Close();
+			PeriphLed2_Close();
+		}
+	}
+	else if(od->nodeState == Stopped)
+	{
+		PeriphLed1_Close();
+		PeriphLed2_Close();
+		PeriphLed3_Close();
+	}
+	else if(od->nodeState == Operational)
+	{
+		if(g_nLedDelayTime & 0x01)
+		{
+			PeriphLed1_Open();
+			PeriphLed2_Open();
+			PeriphLed3_Open();
+		}
+		else
+		{
+			PeriphLed1_Close();
+			PeriphLed2_Close();
+			PeriphLed3_Close();
+		}
+	}
+	else if(od->nodeState == Pre_operational)
+	{
+		if(g_nLedDelayTime & 0x01)
+		{
+			PeriphLed1_Open();
+		}
+		else
+		{
+			PeriphLed1_Close();
+		}
+	}
+		
+		
 	#if SYS_ENABLE_WDT
 	WDG_FeedIWDog();
 	#endif
@@ -260,13 +321,19 @@ void Sys_UartTask(void)
         }
     }
 */
+
+		if(g_sDeviceInfo.flag == DEVICE_FLAG_RESET)
+        {
+            Sys_Delayms(5);
+            Sys_SoftReset();
+        }
 }
 
 
 void Sys_StateInit()
 {
 	setNodeId(&AnyId_Canopen_Slave_Data, Periph_GetAddr());
-	setState(&AnyId_Canopen_Slave_Data, Initialisation);			//设备上线
+	setState(&AnyId_Canopen_Slave_Data, Pre_operational);			//设备上线
 	Sys_DefaultInfoInit();
 
 }

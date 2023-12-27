@@ -772,29 +772,18 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      };
 
 /* index 0x1A00 :   Transmit PDO 1 Mapping. */
-                    UNS8 AnyId_Canopen_Slave_highestSubIndex_obj1A00 = 8; /* number of subindex - 1*/
+                    UNS8 AnyId_Canopen_Slave_highestSubIndex_obj1A00 = 2; /* number of subindex - 1*/
                     UNS32 AnyId_Canopen_Slave_obj1A00[] = 
                     {
-                      0x20000030,	/* 536870976 */
+                      0x20020008,	/* 536870976 */
                       0x20030010,	/* 0 */
-                      0,	/* 0 */
-                      0x0,	/* 0 */
-                      0x0,	/* 0 */
-                      0x0,	/* 0 */
-                      0x0,	/* 0 */
-                      0x0	/* 0 */
+
                     };
                     subindex AnyId_Canopen_Slave_Index1A00[] = 
                      {
                        { RW, uint8, sizeof (UNS8), (void*)&AnyId_Canopen_Slave_highestSubIndex_obj1A00 },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[0] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[1] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[2] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[3] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[4] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[5] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[6] },
-                       { RW, uint32, sizeof (UNS32), (void*)&AnyId_Canopen_Slave_obj1A00[7] }
+                       { RW, uint8, 1, (void*)&AnyId_Canopen_Slave_obj1A00[0] },
+                       { RW, uint16, 2, (void*)&AnyId_Canopen_Slave_obj1A00[1] }
                      };
 
 /* index 0x1A01 :   Transmit PDO 2 Mapping. */
@@ -876,10 +865,23 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
                      };
 
 /* index 0x2000 :   Mapped variable uid */
-					u16 testbuf[128] = {0};
+                    u16 testbuf[128] = {0};
+					
+					//0x2000,can通信参数，包含采样段，过滤器等,更改完成后立即复位？还是等待主机控制复位
+                    UNS8 AnyId_Canopen_Slave_highestSubIndex_obj2000 = 9; /* number of subindex - 1*/
                     subindex AnyId_Canopen_Slave_Index2000[] = 
                      {
-                       { RW, uint16, 6, (void*)&testbuf }
+                       { RO, uint8, sizeof (UNS8), (void*)&AnyId_Canopen_Slave_highestSubIndex_obj2000 },
+					   { RW, uint8, 1, (void*)&g_sDeviceInfo.flag},					//设备软重启
+                       { RW, uint8, 1, (void*)&g_sDeviceParams.canPara.CAN_BS1},	//采样1段								
+					   { RW, uint8, 1, (void*)&g_sDeviceParams.canPara.CAN_BS2},	//采样2段
+					   { RW, uint8, 1, (void*)&g_sDeviceParams.canPara.CAN_SJW},	//跳转段
+					   { RW, uint16, 2, (void*)&g_sDeviceParams.canPara.CAN_Prescaler},
+					   { RW, uint16, 2, (void*)&g_sDeviceParams.canFilterPara.CAN_FilterIdLow},
+					   { RW, uint16, 2, (void*)&g_sDeviceParams.canFilterPara.CAN_FilterIdHigh},
+					   { RW, uint16, 2, (void*)&g_sDeviceParams.canFilterPara.CAN_FilterMaskIdLow},
+					   { RW, uint16, 2, (void*)&g_sDeviceParams.canFilterPara.CAN_FilterMaskIdHigh},
+					   
                      };
 
 /* index 0x2001 :   Mapped variable keyValue */

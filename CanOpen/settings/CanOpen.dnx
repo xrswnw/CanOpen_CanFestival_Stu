@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>2980196018</Checksum>
+        <Checksum>119483867</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -57,19 +57,26 @@
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
     <struct_types>
-        <Fmt0>CO_Data-GuardTimeTimer	4	0</Fmt0>
-        <Fmt1>CO_Data-LifeTimeTimer	4	0</Fmt1>
-        <Fmt2>CO_Data-ProducerHeartBeatTimer	4	0</Fmt2>
-        <Fmt3>CO_Data-syncTimer	4	0</Fmt3>
-        <Fmt4>Message-cob_id	4	0</Fmt4>
-        <Fmt5>indextable-index	4	0</Fmt5>
-        <Fmt6>quick_index-PDO_RCV	4	0</Fmt6>
-        <Fmt7>quick_index-PDO_RCV_MAP	4	0</Fmt7>
-        <Fmt8>quick_index-PDO_TRS	4	0</Fmt8>
-        <Fmt9>quick_index-PDO_TRS_MAP	4	0</Fmt9>
-        <Fmt10>quick_index-SDO_SVR	4	0</Fmt10>
-        <Fmt11>s_transfer-index	4	0</Fmt11>
-        <Fmt12>subindex-size	4	0</Fmt12>
+        <Fmt0>CAN_InitTypeDef-CAN_ABOM	4	0</Fmt0>
+        <Fmt1>CAN_InitTypeDef-CAN_AWUM	4	0</Fmt1>
+        <Fmt2>CAN_InitTypeDef-CAN_NART	4	0</Fmt2>
+        <Fmt3>CAN_InitTypeDef-CAN_RFLM	4	0</Fmt3>
+        <Fmt4>CAN_InitTypeDef-CAN_TTCM	4	0</Fmt4>
+        <Fmt5>CAN_InitTypeDef-CAN_TXFP	4	0</Fmt5>
+        <Fmt6>CO_Data-GuardTimeTimer	4	0</Fmt6>
+        <Fmt7>CO_Data-LifeTimeTimer	4	0</Fmt7>
+        <Fmt8>CO_Data-ProducerHeartBeatTimer	4	0</Fmt8>
+        <Fmt9>CO_Data-syncTimer	4	0</Fmt9>
+        <Fmt10>DEVICE_PARAMS-crc	4	0</Fmt10>
+        <Fmt11>Message-cob_id	4	0</Fmt11>
+        <Fmt12>indextable-index	4	0</Fmt12>
+        <Fmt13>quick_index-PDO_RCV	4	0</Fmt13>
+        <Fmt14>quick_index-PDO_RCV_MAP	4	0</Fmt14>
+        <Fmt15>quick_index-PDO_TRS	4	0</Fmt15>
+        <Fmt16>quick_index-PDO_TRS_MAP	4	0</Fmt16>
+        <Fmt17>quick_index-SDO_SVR	4	0</Fmt17>
+        <Fmt18>s_transfer-index	4	0</Fmt18>
+        <Fmt19>subindex-size	4	0</Fmt19>
     </struct_types>
     <array_types>
         <Fmt0>u16[128]	4	0</Fmt0>
@@ -155,11 +162,13 @@
         <Bp14>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1039.5" 0 0 1 "" 0 "" 0</Bp14>
         <Bp15>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.64.9" 0 0 1 "" 0 "" 0</Bp15>
         <Bp16>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.862.4" 0 0 1 "" 0 "" 0</Bp16>
-        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.149.3" 0 0 1 "" 0 "" 0</Bp17>
-        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.50.6" 0 0 1 "" 0 "" 0</Bp18>
-        <Bp19>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.57.6" 0 0 1 "" 0 "" 0</Bp19>
-        <Bp20>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.230.3" 0 0 1 "" 0 "" 0</Bp20>
-        <Count>21</Count>
+        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.50.6" 0 0 1 "" 0 "" 0</Bp17>
+        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.57.6" 0 0 1 "" 0 "" 0</Bp18>
+        <Bp19>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.230.3" 0 0 1 "" 0 "" 0</Bp19>
+        <Bp20>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.284.3" 0 0 1 "" 0 "" 0</Bp20>
+        <Bp21>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.156.3" 0 0 1 "" 0 "" 0</Bp21>
+        <Bp22>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.72.2" 0 0 1 "" 0 "" 0</Bp22>
+        <Count>23</Count>
     </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
