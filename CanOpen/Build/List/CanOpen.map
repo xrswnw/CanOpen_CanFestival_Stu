@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.1.212/W32 for ARM                  27/Dec/2023  17:41:53
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  05/Jan/2024  13:52:04
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
@@ -8,7 +8,7 @@
 #    Map file     =
 #        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\List\CanOpen.map
 #    Command line =
-#        -f C:\Users\Administrator\AppData\Local\Temp\EW44B3.tmp
+#        -f C:\Users\Administrator\AppData\Local\Temp\EWBA6E.tmp
 #        (E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_Can_HL.o
 #        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_Device.o
 #        E:\AnyID\Git\CanOpen_CanFestival_Stu\CanOpen\Build\Obj\AnyID_CanOpen_FRam.o
@@ -94,7 +94,7 @@ are calls to deallocation functions in the application.
 "P1":  place in [from 0x800'0000 to 0x80f'ffff] { ro };
 define block CSTACK with size = 4K, alignment = 8 { };
 define block HEAP with size = 4K, alignment = 8 { };
-"P2":  place in [from 0x2000'0000 to 0x2001'7fff] {
+"P2":  place in [from 0x2000'0000 to 0x2000'4fff] {
           rw, block CSTACK, block HEAP };
 initialize by copy { rw };
 
@@ -573,7 +573,7 @@ Unused ranges:
    0x800'e474   0x80f'ffff  0xf'1b8c
   0x2000'120f  0x2000'120f       0x1
   0x2000'1dfc  0x2000'1dff       0x4
-  0x2000'3e00  0x2001'7fff  0x1'4200
+  0x2000'3e00  0x2000'4fff    0x1200
 
 
 *******************************************************************************

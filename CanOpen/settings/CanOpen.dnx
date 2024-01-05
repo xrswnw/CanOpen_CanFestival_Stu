@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <settings>
     <DebugChecksum>
-        <Checksum>119483867</Checksum>
+        <Checksum>614876494</Checksum>
     </DebugChecksum>
     <Trace1>
         <Enabled>0</Enabled>
@@ -141,35 +141,6 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.59.9" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.83.15" 0 0 1 "" 0 "" 0</Bp1>
-        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.76.10" 0 0 1 "" 0 "" 0</Bp2>
-        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.70.9" 0 0 1 "" 0 "" 0</Bp3>
-        <Bp4>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.115.11" 0 0 1 "" 0 "" 0</Bp4>
-        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.101.5" 0 0 1 "" 0 "" 0</Bp5>
-        <Bp6>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.86.3" 0 0 1 "" 0 "" 0</Bp6>
-        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.95.4" 0 0 1 "" 0 "" 0</Bp7>
-        <Bp8>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.96.5" 0 0 1 "" 0 "" 0</Bp8>
-        <Bp9>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.0.1" 0 0 1 "" 0 "" 0</Bp9>
-        <Bp10>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1891.3" 0 0 1 "" 0 "" 0</Bp10>
-        <Bp11>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1897.3" 0 0 1 "" 0 "" 0</Bp11>
-        <Bp12>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1919.5" 0 0 1 "" 0 "" 0</Bp12>
-        <Bp13>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\inc\states.h}.53.1" 0 0 1 "" 0 "" 0</Bp13>
-        <Bp14>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1039.5" 0 0 1 "" 0 "" 0</Bp14>
-        <Bp15>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.64.9" 0 0 1 "" 0 "" 0</Bp15>
-        <Bp16>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.862.4" 0 0 1 "" 0 "" 0</Bp16>
-        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.50.6" 0 0 1 "" 0 "" 0</Bp17>
-        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.57.6" 0 0 1 "" 0 "" 0</Bp18>
-        <Bp19>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.230.3" 0 0 1 "" 0 "" 0</Bp19>
-        <Bp20>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.284.3" 0 0 1 "" 0 "" 0</Bp20>
-        <Bp21>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.156.3" 0 0 1 "" 0 "" 0</Bp21>
-        <Bp22>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.72.2" 0 0 1 "" 0 "" 0</Bp22>
-        <Count>23</Count>
-    </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -179,10 +150,6 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <Aliases>
-        <Count>0</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>1</Mode>
@@ -200,4 +167,37 @@
         <Probe0>I0</Probe0>
         <ProbeSetup0>2 1 1 2 0 0</ProbeSetup0>
     </PowerProbe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.59.9" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.83.15" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.76.10" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.70.9" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.115.11" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.101.5" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\lifegrd.c}.86.3" 0 0 1 "" 0 "" 0</Bp6>
+        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.95.4" 0 0 1 "" 0 "" 0</Bp7>
+        <Bp8>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\states.c}.96.5" 0 0 1 "" 0 "" 0</Bp8>
+        <Bp9>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.356.1" 0 0 1 "" 0 "" 0</Bp9>
+        <Bp10>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1891.3" 0 0 1 "" 0 "" 0</Bp10>
+        <Bp11>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1897.3" 0 0 1 "" 0 "" 0</Bp11>
+        <Bp12>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1919.5" 0 0 1 "" 0 "" 0</Bp12>
+        <Bp13>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\inc\states.h}.53.1" 0 0 1 "" 0 "" 0</Bp13>
+        <Bp14>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.1039.5" 0 0 1 "" 0 "" 0</Bp14>
+        <Bp15>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\nmtSlave.c}.64.9" 0 0 1 "" 0 "" 0</Bp15>
+        <Bp16>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.862.4" 0 0 1 "" 0 "" 0</Bp16>
+        <Bp17>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.50.6" 0 0 1 "" 0 "" 0</Bp17>
+        <Bp18>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\driver\AnyId_Canopen_Slave.c}.57.6" 0 0 1 "" 0 "" 0</Bp18>
+        <Bp19>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.230.3" 0 0 1 "" 0 "" 0</Bp19>
+        <Bp20>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\CanFestival\src\sdo.c}.284.3" 0 0 1 "" 0 "" 0</Bp20>
+        <Bp21>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_SysCfg.c}.156.3" 0 0 1 "" 0 "" 0</Bp21>
+        <Bp22>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\AnyID_CanOpen_RS485_HL.c}.72.2" 0 0 1 "" 0 "" 0</Bp22>
+        <Count>23</Count>
+    </Breakpoints2>
+    <Aliases>
+        <Count>0</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
 </settings>
